@@ -6,4 +6,4 @@ console.log("Removing type:module to package.json");
 delete _package.type;
 
 // eslint-disable-next-line no-magic-numbers
-fs.writeFileSync("package.json", JSON.stringify(_package, null, 2));
+fs.writeFileSync("package.json", `${JSON.stringify(_package, null, 2)}\n`);
