@@ -1,5 +1,5 @@
 import React from "react";
-import Home from "../../src/pages/index";
+import Home from "../../pages/index";
 
 export default {
   title: "Pages/Home",

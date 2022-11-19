@@ -1,11 +1,12 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "noEmit": false
+    "noEmit": false,
+    "jsx": "react"
   },
   "include": [
     "next-env.d.ts",
-    "src/components/**/*.tsx",
+    "src/comps/**/*.tsx",
     "src/utils/**/*.ts"
   ],
 }

@@ -1,0 +1,22 @@
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.yarnrc
+.npmrc
+*.tgz
+
+/.next
+/.storybook
+/public
+/src
+
+.eslintrc.js
+next-env.d.ts
+next.config.js
+postcss.config.js
+tailwind.config.js
+.tsbuildinfo
+tsconfig.json
+tsconfig.production.json

@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
-import SEOItem from "../components/items/common/SEOItem";
+import SEOItem from "../comps/items/common/SEOItem";
+import Button001 from "../comps/items/buttons/Button001";
 
 const Home = (): JSX.Element => (
   <div>
@@ -20,6 +21,10 @@ const Home = (): JSX.Element => (
       <p>
         Get started by editing{" "}
       </p>
+
+      <div>
+        <Button001 label="Click me" />
+      </div>
     </main>
   </div>
 );

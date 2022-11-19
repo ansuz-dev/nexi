@@ -21,8 +21,11 @@ module.exports = eslintConfig(
           "react/display-name": "off",
           "import/extensions": "off",
           "max-lines-per-function": "off",
-          "@typescript-eslint/naming-convention": "off",
-          "@typescript-eslint/no-magic-numbers": "off",
+          "import/no-anonymous-default-export": "off",
+          "@typescript-eslint/naming-convention": [
+            "warn",
+            {"selector": "variableLike", "format": ["camelCase", "UPPER_CASE", "PascalCase"]},
+          ],
         },
       },
     ],
