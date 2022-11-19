@@ -1,6 +1,6 @@
 {
   "name": "@ansuzdev/nexi",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf .tsbuildinfo dist && tsc --project tsconfig.production.json",
@@ -10,7 +10,7 @@
     "build-sb": "build-storybook",
     "prepublishOnly": "node scripts/addtype.cjs",
     "npm-publish": "npm run build && npm publish --access public",
-    "postpublish": "node scripts/removetype.cjs"
+    "postpublish": "node scripts/removetype.cjs && npm version patch"
   },
   "dependencies": {
     "classnames": "^2.3.2"
