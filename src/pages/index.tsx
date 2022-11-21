@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import SEOItem from "../comps/items/common/SEOItem";
 import Button001 from "../comps/items/buttons/Button001";
+import ServiceCard003 from "../comps/cards/services/ServiceCard003";
 
 const Home = (): JSX.Element => (
   <div>
@@ -24,6 +25,16 @@ const Home = (): JSX.Element => (
 
       <div>
         <Button001 label="Click me" />
+
+        <div className="w-80">
+          <ServiceCard003
+            service={{
+              name: "Lorem ipsum dolor sit amen",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}}},
+            }}
+          />
+        </div>
       </div>
     </main>
   </div>

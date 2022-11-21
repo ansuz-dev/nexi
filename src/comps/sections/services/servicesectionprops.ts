@@ -11,6 +11,7 @@ export interface ServiceSectionClasses {
   title?: string;
   subtitle?: string;
   list?: string;
+  links?: string;
 }
 
 export interface ServiceSectionProps {
@@ -18,7 +19,11 @@ export interface ServiceSectionProps {
   classes?: ServiceSectionClasses;
 }
 
-export type ServiceSectionLayouts = "default" | "ss001";
+export type ServiceSectionLayouts =
+  "default"
+  | "ss001"
+  | "ss002"
+  | "ss003";
 
 export interface GlobalServiceSectionData extends ServiceSectionData {
   layout?: ServiceSectionLayouts;

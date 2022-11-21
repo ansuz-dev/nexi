@@ -4,9 +4,7 @@ import cx from "classnames";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import {ServiceCardProps} from "./servicecardprops";
 
-const photoHeight = 240;
-
-const ServiceCard001 = ({service, classes}: ServiceCardProps): JSX.Element => {
+const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   const name = getAttr(service, "name") as string;
   const photo = getAttr(service, "photo");
 
@@ -65,4 +63,4 @@ const ServiceCard001 = ({service, classes}: ServiceCardProps): JSX.Element => {
   );
 };
 
-export default React.memo(ServiceCard001);
+export default React.memo(ServiceCard002);

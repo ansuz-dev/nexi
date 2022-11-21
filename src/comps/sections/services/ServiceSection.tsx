@@ -5,6 +5,8 @@ import {GlobalServiceSectionProps} from "./servicesectionprops";
 const comps = {
   "default": dynamic(() => import("./ServiceSection001"), {suspense: true}),
   "ss001": dynamic(() => import("./ServiceSection001"), {suspense: true}),
+  "ss002": dynamic(() => import("./ServiceSection002"), {suspense: true}),
+  "ss003": dynamic(() => import("./ServiceSection003"), {suspense: true}),
 };
 
 const ServiceSection = ({data}: GlobalServiceSectionProps) : JSX.Element => {
