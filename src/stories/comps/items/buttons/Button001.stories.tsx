@@ -15,5 +15,5 @@ const Template = ({label, ...rest} : ButtonProps) => (
   <Button001 label={label} type="primary" {...rest} />
 );
 
-export const Button = Template.bind({});
-Button.args = {label: "Click me"};
+export const SampleButton = Template.bind({});
+SampleButton.args = {label: "Click me"};
