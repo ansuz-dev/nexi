@@ -38,3 +38,11 @@
     @apply text-base md:text-lg;
   }
 }
+
+.servicecard-002 .sc-content {
+  @apply bg-orange-200;
+}
+
+.servicecard-002 .sc-photo {
+  @apply h-64;
+}

@@ -1,21 +1,21 @@
 import React from "react";
 import cx from "classnames";
 import {getAttr} from "../../../utils";
-import ServiceCard001 from "../../cards/services/ServiceCard001";
+import ServiceCard002 from "../../cards/services/ServiceCard002";
 import {ServiceSectionProps} from "./servicesectionprops";
 
-const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element => {
+const ServiceSection002 = ({data, classes}: ServiceSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string | undefined;
   const services = getAttr(data, "services") as Array<unknown> | undefined;
 
   const rootClass = cx(
     "servicesection-001",
-    "grid grid-cols-12 gap-6 p-12",
+    "p-12",
     classes?.root,
   );
   const containerClass = cx(
     "section-container",
-    "col-start-2 col-span-10 space-y-8",
+    "space-y-8",
     classes?.container,
   );
   const titleClass = cx(
@@ -36,7 +36,7 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
         <div className={listClass}>
           {services?.map((service, index) => (
             // eslint-disable-next-line react/no-array-index-key
-            <ServiceCard001 key={index} service={service} />
+            <ServiceCard002 key={index} service={service} />
           ))}
         </div>
       </div>
@@ -44,6 +44,6 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   );
 };
 
-ServiceSection001.propTypes = {};
+ServiceSection002.propTypes = {};
 
-export default ServiceSection001;
+export default ServiceSection002;
