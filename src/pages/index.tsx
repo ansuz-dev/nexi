@@ -24,7 +24,7 @@ const Home = (): JSX.Element => (
       </p>
 
       <div>
-        <Button001 label="Click me" />
+        <Button001 link label="Click me" />
 
         <div className="w-80">
           <ServiceCard003

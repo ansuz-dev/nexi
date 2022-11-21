@@ -25,9 +25,9 @@ const Button001 = (props: ButtonProps) : JSX.Element => {
   return props.link
     ? (
       <Link href={props.href as string} prefetch={false}>
-        <a className={rootClass}>
+        <div className={rootClass}>
           {props.label}
-        </a>
+        </div>
       </Link>
     )
     : (
