@@ -18,7 +18,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
   const rootClass = cx(
-    "servicesection-001",
+    "headersection-001",
     "relative py-40",
     classes?.root,
   );

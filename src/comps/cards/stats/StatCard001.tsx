@@ -18,12 +18,12 @@ const StatCard001 = ({stat, classes}: StatCardProps): JSX.Element => {
     classes?.content,
   );
   const labelClass = cx(
-    "stc-value",
+    "stc-label",
     "text-xl font-medium leading-normal tracking-[0.15px]",
     classes?.name,
   );
   const valueClass = cx(
-    "stc-label",
+    "stc-value",
     "text-5xl leading-snug",
     classes?.description,
   );
