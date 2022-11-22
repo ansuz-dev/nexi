@@ -2,7 +2,8 @@ export interface ServiceSectionData {
   title?: string;
   subtitle?: string;
   background?: string;
-  services?: Array<unknown>
+  services?: Array<unknown>;
+  links?: Array<unknown>;
 }
 
 export interface ServiceSectionClasses {
