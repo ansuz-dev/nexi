@@ -19,7 +19,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
 
   const rootClass = cx(
     "servicesection-001",
-    "py-40",
+    "relative py-40",
     classes?.root,
   );
   const containerClass = cx(
@@ -29,12 +29,12 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   );
   const titleClass = cx(
     "section-title",
-    "text-5xl leading-snug text-center",
+    "text-5xl leading-snug text-center text-white",
     classes?.title,
   );
   const subtitleClass = cx(
     "section-subtitle",
-    "text-xl font-medium leading-normal tracking-[0.15px]",
+    "text-xl font-medium leading-normal tracking-[0.15px] text-white",
     classes?.subtitle,
   );
   const linksClass = cx(
@@ -48,8 +48,10 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
       <div className={containerClass}>
         <div className="grid grid-cols-12 gap-6">
           <div className="col-start-4 col-span-6 space-y-8">
-            <h3 className={titleClass}>{title}</h3>
-            <h6 className={subtitleClass}>{subtitle}</h6>
+            <div className="space-y-6">
+              <h3 className={titleClass}>{title}</h3>
+              <h6 className={subtitleClass}>{subtitle}</h6>
+            </div>
             <div className={linksClass}>
               {links?.map((link, index) => (
                 <Button
@@ -65,7 +67,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
           </div>
         </div>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full">
+      <div className="absolute top-0 left-0 w-full h-full -z-20">
         <div className="relative w-full h-full">
           {
             Boolean(photoUrl) && (
@@ -84,6 +86,10 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
           }
         </div>
       </div>
+      <div
+        className="absolute top-0 left-0 w-full h-full -z-10"
+        style={{background: "linear-gradient(0deg, rgba(17, 17, 17, 0.2), rgba(17, 17, 17, 0.2))"}}
+      />
     </section>
   );
 };
