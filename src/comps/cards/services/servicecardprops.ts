@@ -4,6 +4,7 @@ export interface ServiceCardClasses {
   content?: string;
   name?: string;
   description?: string;
+  link?: string;
 }
 
 export interface ServiceCardProps {

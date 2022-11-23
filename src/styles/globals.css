@@ -30,6 +30,19 @@
   .body1 {
     @apply text-base leading-normal tracking-[0.5px];
   }
+
+  .body2 {
+    @apply text-sm leading-normal tracking-[0.25px];
+  }
+
+  .subtitle1 {
+    @apply text-base leading-normal font-bold tracking-[0.5px];
+  }
+
+  .subtitle2 {
+    @apply text-sm leading-normal font-bold tracking-[0.1px];
+  }
+
   .caption {
     @apply text-xs md:text-sm;
   }
@@ -37,12 +50,4 @@
   .title {
     @apply text-base md:text-lg;
   }
-}
-
-.servicecard-002 .sc-content {
-  @apply bg-orange-200;
-}
-
-.servicecard-002 .sc-photo {
-  @apply h-64;
 }

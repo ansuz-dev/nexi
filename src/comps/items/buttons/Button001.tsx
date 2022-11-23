@@ -9,15 +9,14 @@ const Button001 = (props: ButtonProps) : JSX.Element => {
     {
       "inline-flex justify-center items-center rounded": true,
       "font-medium whitespace-nowrap": true,
-      "hover:opacity-80 active:opacity-100": true,
       "border": props.type === "outlined",
-      "text-white bg-primary-100": props.type === "solid" && props.color === "primary",
-      "text-white bg-secondary-100": props.type === "solid" && props.color === "secondary",
-      "text-primary-100 border-primary-100": props.type === "outlined" && props.color === "primary",
-      "text-secondary-100 border-secondary-100": props.type === "outlined" && props.color === "secondary",
-      "text-sm lg:text-base h-12 px-10": props.size === "large",
-      "text-sm lg:text-base h-10 px-8": props.size === "medium",
-      "text-xs lg:text-sm h-8 px-6": props.size === "small",
+      "text-white bg-primary-500 hover:bg-primary-400 active:bg-primary-600": props.type === "solid" && props.color === "primary",
+      "text-white bg-secondary-500 hover:bg-secondary-400 active:bg-secondary-600": props.type === "solid" && props.color === "secondary",
+      "text-primary-500 border-primary-500 hover:text-primary-400 active:text-primary-600 hover:border-primary-400 active:border-primary-600": props.type === "outlined" && props.color === "primary",
+      "text-secondary-500 border-secondary-500 hover:text-secondary-400 active:text-secondary-600 hover:border-secondary-400 active:border-secondary-600": props.type === "outlined" && props.color === "secondary",
+      "text-sm lg:text-base h-14 px-5": props.size === "large",
+      "text-sm lg:text-base h-12 px-4": props.size === "medium",
+      "text-xs lg:text-sm h-9 px-2.5": props.size === "small",
     },
     props.className,
   );
@@ -25,9 +24,9 @@ const Button001 = (props: ButtonProps) : JSX.Element => {
   return props.link
     ? (
       <Link href={props.href as string} prefetch={false}>
-        <div className={rootClass}>
+        <span className={rootClass}>
           {props.label}
-        </div>
+        </span>
       </Link>
     )
     : (

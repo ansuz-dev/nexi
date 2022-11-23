@@ -15,7 +15,7 @@ const Template = (props : StatCardProps) => (
 
 export const SampleCard = Template.bind({});
 SampleCard.args = {
-  service: {
+  stat: {
     label: "Experienced years",
     value: "10+",
   },

@@ -9,7 +9,7 @@ const StatCard001 = ({stat, classes}: StatCardProps): JSX.Element => {
 
   const rootClass = cx(
     "statscard-001",
-    "bg-secondary-100 p-6 rounded",
+    "bg-secondary-600 p-6 rounded",
     classes?.root,
   );
   const contentClass = cx(

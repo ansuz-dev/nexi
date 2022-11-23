@@ -32,7 +32,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
   );
   const priceClass = cx(
     "pc-price",
-    "text-4xl leading-snug tracking-[0.25px] text-secondary-100",
+    "text-4xl leading-snug tracking-[0.25px] text-secondary-600",
     classes?.price,
   );
   const unitClass = cx(
@@ -45,8 +45,8 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
     <div className={rootClass}>
       {
         recommended ? (
-          <div className="flex h-6 justify-center items-center bg-secondary-30">
-            <p className="text-xs font-medium tracking-[0.25px] text-secondary-100">
+          <div className="flex h-6 justify-center items-center bg-secondary-50">
+            <p className="text-xs font-medium tracking-[0.25px] text-secondary-800">
               {recommended}
             </p>
           </div>

@@ -5,6 +5,8 @@ import Button001 from "../comps/items/buttons/Button001";
 import ServiceCard003 from "../comps/cards/services/ServiceCard003";
 import GallerySection001 from "../comps/sections/galleries/GallerySection001";
 import GallerySection002 from "../comps/sections/galleries/GallerySection002";
+import Navbar001 from "../comps/sections/navbars/Navbar001";
+import Footer001 from "../comps/sections/footers/Footer001";
 
 const Home = (): JSX.Element => (
   <div>
@@ -16,17 +18,32 @@ const Home = (): JSX.Element => (
 
     <SEOItem />
 
-    <main>
-      <h1>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
+    {/* <Navbar001
+      active="/link-1"
+      data={{
+        logo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+        links: [
+          {title: "Home", link: "/link-1"},
+          {title: "Rénovation", link: "/link-2"},
+          {title: "Dépannage", link: "/link-2"},
+          {title: "Le groupe 24/7 HESTIA", link: "/link-2"},
+          {title: "Tarifs", link: "/link-2"},
+        ],
+        rightLinks: [
+          {title: "01 83 64 12 15", link: "tel:01 83 64 12 15"},
+        ],
+      }}
+    /> */}
 
-      <p>
-        Get started by editing{" "}
-      </p>
+    <main>
 
       <div>
-        <Button001 link label="Click me" />
+        <Button001
+          link
+          label="Click me"
+          href="/test"
+          type="outlined"
+        />
 
         <div className="w-80">
           <ServiceCard003
@@ -55,6 +72,35 @@ const Home = (): JSX.Element => (
         </div>
       </div>
     </main>
+
+    <Footer001
+      data={{
+        logo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+        photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+        links: [
+          {title: "Home", link: "/link-1"},
+          {title: "Rénovation", link: "/link-2"},
+          {title: "Dépannage", link: "/link-2"},
+          {title: "Le groupe 24/7 HESTIA", link: "/link-2"},
+          {title: "Tarifs", link: "/link-2"},
+        ],
+        addresses: [
+          {title: "Siège social", address: "103 boulevard Mad donald 75019 PARIS"},
+          {title: "Pole Administratif", address: "1 rue Marceau 93100 MONTREUIL"},
+        ],
+        contacts: [
+          {name: "PARIS/IDF", phone: "01 83 64 12 15", email: "contact@hestiaecobat.com"},
+        ],
+        socialLinks: {
+          facebook: "https://facebook.com",
+          linkedin: "https://linkedin.com",
+          twitter: "https://twitter.com",
+          youtube: "https://youtube.com",
+          instagram: "https://instagram.com",
+        },
+        copyright: "© 2022 Hestia Eco Bat. All rights reserved.",
+      }}
+    />
   </div>
 );
 
