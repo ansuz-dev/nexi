@@ -42,7 +42,7 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
           <div className="relative w-full pt-[71.43%]">
             <div className="absolute top-0 left-0 grid grid-cols-7 grid-rows-5 gap-1 w-full h-full">
               {photos.slice(0, photoClasses.length).map((photo, index) => {
-                let photoUrl = getFormatUrl(photo, "small") as string;
+                let photoUrl = getFormatUrl(photo, "large") as string;
                 if (!photo) {
                   photoUrl = getUrl(photo) as string;
                 }

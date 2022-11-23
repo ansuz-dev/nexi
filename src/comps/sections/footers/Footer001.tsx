@@ -1,9 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import Image from "next/image";
-import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import ContactItem, {ContactItemProps} from "../../items/common/ContactItem";
 import SocialsItem from "../../items/common/SocialsItem";
 import {FooterProps} from "./footerprops";

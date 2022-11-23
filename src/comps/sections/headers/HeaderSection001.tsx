@@ -11,10 +11,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const links = getAttr(data, "links") as Array<unknown> | undefined;
   const photos = getAttr(data, "photos", "data") as Array<unknown> | undefined;
   const photo = photos?.[0];
-  let photoUrl = getFormatUrl(photo, "small") as string;
-  if (!photo) {
-    photoUrl = getUrl(photo) as string;
-  }
+  const photoUrl = getUrl(photo) as string;
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
   const rootClass = cx(
