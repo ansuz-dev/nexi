@@ -1,19 +1,21 @@
 import React from "react";
 import cx from "classnames";
-import {getAttr} from "../../../utils";
+import {getAttr, isGray} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import PricingCard001 from "../../cards/pricings/PricingCard001";
 import {PricingSectionProps} from "./pricingsectionprops";
 
 const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
+  const background = getAttr(data, "background") as string;
   const subtitle = getAttr(data, "subtitle") as string;
-  const links = getAttr(data, "links") as Array<unknown> | undefined;
+  const links = getAttr(data, "links") as Array<unknown>;
   const plans = getAttr(data, "plans") as Array<unknown>;
 
   const rootClass = cx(
     "pricingsection-001",
     "py-12",
+    {"bg-neutral-50": isGray(background)},
     classes?.root,
   );
   const containerClass = cx(
@@ -46,19 +48,20 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
               <h3 className={titleClass}>{title}</h3>
               <p className={subtitleClass}>{subtitle}</p>
             </div>
-            <div className={linksClass}>
-              {links?.map((link, index) => (
-                <Button
-                  // eslint-disable-next-line react/no-array-index-key
-                  key={index}
-                  link
-                  type="solid"
-                  color="primary"
-                  href={getAttr(link, "link") as string}
-                  label={getAttr(link, "title") as string}
-                />
-              ))}
-            </div>
+            {Boolean(links) && (
+              <div className={linksClass}>
+                {links.map((link, index) => (
+                  <Button
+                    key={index}
+                    link
+                    type="solid"
+                    color="primary"
+                    href={getAttr(link, "link") as string}
+                    label={getAttr(link, "title") as string}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
         {
@@ -67,7 +70,6 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
             <div className="grid grid-cols-4">
               {
                 plans.map((pricing, index) => (
-                // eslint-disable-next-line react/no-array-index-key
                   <PricingCard001 key={index} pricing={pricing} />
                 ))
               }

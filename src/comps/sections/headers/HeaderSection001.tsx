@@ -55,7 +55,6 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
             <div className={linksClass}>
               {links?.map((link, index) => (
                 <Button
-                  // eslint-disable-next-line react/no-array-index-key
                   key={index}
                   link
                   size="large"

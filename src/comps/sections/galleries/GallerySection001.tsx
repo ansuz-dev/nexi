@@ -4,15 +4,17 @@ import Image from "next/image";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
 import {GallerySectionProps} from "./gallerysectionprops";
 
 const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element => {
-  const photos = getAttr(data, "photos", "data") as Array<unknown> | undefined;
+  const background = getAttr(data, "background") as string;
+  const photos = getAttr(data, "photos", "data") as Array<unknown>;
 
   const rootClass = cx(
     "gallerysection-001",
     "py-12",
+    {"bg-neutral-50": isGray(background)},
     classes?.root,
   );
   const containerClass = cx(
@@ -38,7 +40,7 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
             1024: {slidesPerView: 4},
           }}
         >
-          {photos?.map((photo, index) => {
+          {Boolean(photos) && photos.map((photo, index) => {
             let photoUrl = getFormatUrl(photo, "small") as string;
             if (!photo) {
               photoUrl = getUrl(photo) as string;
@@ -46,7 +48,6 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
             const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
             return (
-              // eslint-disable-next-line react/no-array-index-key
               <SwiperSlide key={index}>
                 <div className="relative w-full h-80">
                   <Image

@@ -76,7 +76,6 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
         <div className="space-y-1">
           {
             list.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
               <div key={index} className="flex space-x-2 py-0.5">
                 <div>
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="#1D7FF7" xmlns="http://www.w3.org/2000/svg">

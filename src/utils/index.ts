@@ -1,3 +1,4 @@
+/* eslint-disable prefer-named-capture-group */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 // eslint-disable-next-line no-process-env
 const domain = process.env.NEXT_PUBLIC_STRAPI_API_URL as string;
@@ -55,3 +56,9 @@ const toBase64 = (str: string): string => typeof window === "undefined" ? Buffer
 
 export const shimmerBlur
 = (w: number, h: number): string => `data:image/svg+xml;base64,${toBase64(shimmer(w, h))}`;
+
+export const isGray = (background: string): boolean => {
+  if (!background) return false;
+
+  return Boolean(background.trim().match(/^(grey|gray)$/ui));
+};

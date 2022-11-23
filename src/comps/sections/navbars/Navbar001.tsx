@@ -73,7 +73,6 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
 
                   return (
                     <Link
-                    // eslint-disable-next-line react/no-array-index-key
                       key={index}
                       href={link}
                     >
@@ -93,7 +92,6 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
               {
                 rightLinks.map((item, index) => (
                   <Button
-                    // eslint-disable-next-line react/no-array-index-key
                     key={index}
                     link
                     layout="btn001"

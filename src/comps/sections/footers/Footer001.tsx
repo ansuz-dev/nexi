@@ -65,7 +65,6 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
           </div>
           <div className="space-y-6">
             {addresses.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
               <div key={index} className="space-y-2">
                 <label className="text-base leading-normal font-bold tracking-[0.5px]">
                   {getAttr(item, "title") as string}
@@ -81,7 +80,6 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
               Contacts
             </label>
             {contacts.map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
               <ContactItem key={index} {...item} />
             ))}
           </div>

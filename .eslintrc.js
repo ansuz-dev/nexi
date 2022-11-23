@@ -22,6 +22,7 @@ module.exports = eslintConfig(
           "import/extensions": "off",
           "max-lines-per-function": "off",
           "import/no-anonymous-default-export": "off",
+          "react/no-array-index-key": "off",
           "@typescript-eslint/naming-convention": [
             "warn",
             {"selector": "variableLike", "format": ["camelCase", "UPPER_CASE", "PascalCase"]},
