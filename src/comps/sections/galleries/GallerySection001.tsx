@@ -7,9 +7,6 @@ import {Pagination} from "swiper";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import {GallerySectionProps} from "./gallerysectionprops";
 
-import "swiper/css";
-import "swiper/css/pagination";
-
 const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element => {
   const photos = getAttr(data, "photos", "data") as Array<unknown> | undefined;
 

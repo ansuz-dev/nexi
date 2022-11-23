@@ -8,6 +8,9 @@ import GallerySection002 from "../comps/sections/galleries/GallerySection002";
 import Navbar001 from "../comps/sections/navbars/Navbar001";
 import Footer001 from "../comps/sections/footers/Footer001";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 const Home = (): JSX.Element => (
   <div>
     <Head>
