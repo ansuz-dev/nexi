@@ -8,7 +8,7 @@ export default {
 };
 
 const Template = (props : ServiceSectionProps) => (
-  <div className="container">
+  <div>
     <ServiceSection003 {...props} />
   </div>
 );

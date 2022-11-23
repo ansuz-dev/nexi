@@ -10,12 +10,12 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
 
   const rootClass = cx(
     "servicesection-001",
-    "grid grid-cols-12 gap-6 p-12",
+    "py-12",
     classes?.root,
   );
   const containerClass = cx(
     "section-container",
-    "col-start-2 col-span-10 space-y-8",
+    "container mx-auto",
     classes?.container,
   );
   const titleClass = cx(
@@ -32,12 +32,16 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   return (
     <section className={rootClass}>
       <div className={containerClass}>
-        <h3 className={titleClass}>{title}</h3>
-        <div className={listClass}>
-          {services?.map((service, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ServiceCard001 key={index} service={service} />
-          ))}
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-start-2 col-span-10 space-y-8">
+            <h3 className={titleClass}>{title}</h3>
+            <div className={listClass}>
+              {services?.map((service, index) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <ServiceCard001 key={index} service={service} />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

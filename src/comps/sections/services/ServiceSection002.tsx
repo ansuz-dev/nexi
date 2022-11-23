@@ -9,13 +9,13 @@ const ServiceSection002 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   const services = getAttr(data, "services") as Array<unknown> | undefined;
 
   const rootClass = cx(
-    "servicesection-001",
-    "p-12",
+    "servicesection-002",
+    "py-12",
     classes?.root,
   );
   const containerClass = cx(
     "section-container",
-    "space-y-8",
+    "container mx-auto space-y-8",
     classes?.container,
   );
   const titleClass = cx(

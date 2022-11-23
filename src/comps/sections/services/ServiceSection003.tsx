@@ -11,8 +11,8 @@ const ServiceSection003 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   const links = getAttr(data, "links") as Array<unknown> | undefined;
 
   const rootClass = cx(
-    "servicesection-001",
-    "p-12",
+    "servicesection-003",
+    "py-12",
     classes?.root,
   );
   const containerClass = cx(
