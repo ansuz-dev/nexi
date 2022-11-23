@@ -1,6 +1,6 @@
 {
   "name": "@ansuzdev/nexi",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "scripts": {
     "dev": "next dev",
     "build": "rm -rf .tsbuildinfo dist && tsc --project tsconfig.production.json",
