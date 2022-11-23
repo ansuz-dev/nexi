@@ -7,13 +7,13 @@ const comps = {
   "nav001": dynamic(() => import("./Navbar001"), {suspense: true}),
 };
 
-const Navbar = ({data}: GlobalNavbarProps) : JSX.Element => {
+const Navbar = ({data, ...rest}: GlobalNavbarProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} />
+      <Component data={data} {...rest} />
     </React.Suspense>
   );
 };

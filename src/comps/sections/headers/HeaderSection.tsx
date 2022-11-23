@@ -7,13 +7,13 @@ const comps = {
   "hs001": dynamic(() => import("./HeaderSection001"), {suspense: true}),
 };
 
-const HeaderSection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
+const HeaderSection = ({data, ...rest}: GlobalHeaderSectionProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} />
+      <Component data={data} {...rest} />
     </React.Suspense>
   );
 };

@@ -7,13 +7,13 @@ const comps = {
   "sts001": dynamic(() => import("./StatsSection001"), {suspense: true}),
 };
 
-const StatsSection = ({data}: GlobalStatsSectionProps) : JSX.Element => {
+const StatsSection = ({data, ...rest}: GlobalStatsSectionProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} />
+      <Component data={data} {...rest} />
     </React.Suspense>
   );
 };

@@ -8,13 +8,13 @@ const comps = {
   "gs002": dynamic(() => import("./GallerySection002"), {suspense: true}),
 };
 
-const GallerySection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
+const GallerySection = ({data, ...rest}: GlobalHeaderSectionProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} />
+      <Component data={data} {...rest} />
     </React.Suspense>
   );
 };

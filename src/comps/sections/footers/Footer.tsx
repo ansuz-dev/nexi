@@ -7,13 +7,13 @@ const comps = {
   "footer001": dynamic(() => import("./Footer001"), {suspense: true}),
 };
 
-const FooterSection = ({data}: GlobalFooterProps) : JSX.Element => {
+const FooterSection = ({data, ...rest}: GlobalFooterProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} />
+      <Component data={data} {...rest} />
     </React.Suspense>
   );
 };
