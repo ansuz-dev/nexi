@@ -19,7 +19,7 @@ const ServiceSection003 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   );
   const containerClass = cx(
     "section-container",
-    "space-y-8",
+    "container mx-auto space-y-8",
     classes?.container,
   );
   const titleClass = cx(
