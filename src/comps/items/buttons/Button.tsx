@@ -19,4 +19,4 @@ const Button = ({layout, ...rest}: GlobalButtonProps) : JSX.Element => {
 
 Button.defaultProps = {layout: "default"};
 
-export default Button;
+export default React.memo(Button);

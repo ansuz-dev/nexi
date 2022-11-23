@@ -81,4 +81,4 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
 
 PricingSection001.propTypes = {};
 
-export default PricingSection001;
+export default React.memo(PricingSection001);

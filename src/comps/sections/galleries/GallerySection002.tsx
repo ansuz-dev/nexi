@@ -80,4 +80,4 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
 
 GallerySection002.propTypes = {};
 
-export default GallerySection002;
+export default React.memo(GallerySection002);

@@ -56,4 +56,4 @@ ContactItem.defaultProps = {
   email: null,
 };
 
-export default ContactItem;
+export default React.memo(ContactItem);

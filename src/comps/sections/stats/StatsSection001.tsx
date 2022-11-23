@@ -74,4 +74,4 @@ const StatsSection001 = ({data, classes}: StatsSectionProps): JSX.Element => {
 
 StatsSection001.propTypes = {};
 
-export default StatsSection001;
+export default React.memo(StatsSection001);

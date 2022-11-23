@@ -73,4 +73,4 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
 
 GallerySection001.propTypes = {};
 
-export default GallerySection001;
+export default React.memo(GallerySection001);

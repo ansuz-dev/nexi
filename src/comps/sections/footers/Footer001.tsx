@@ -125,4 +125,4 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
 
 Footer001.propTypes = {};
 
-export default Footer001;
+export default React.memo(Footer001);

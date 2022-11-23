@@ -8,7 +8,7 @@ const comps = {
   "gs002": dynamic(() => import("./GallerySection002"), {suspense: true}),
 };
 
-const HeaderSection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
+const GallerySection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
@@ -19,6 +19,6 @@ const HeaderSection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
   );
 };
 
-HeaderSection.defaultProps = {layout: "default"};
+GallerySection.defaultProps = {layout: "default"};
 
-export default HeaderSection;
+export default React.memo(GallerySection);

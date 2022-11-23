@@ -113,4 +113,4 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
 
 Navbar001.propTypes = {};
 
-export default Navbar001;
+export default React.memo(Navbar001);

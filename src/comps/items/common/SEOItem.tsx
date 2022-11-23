@@ -87,4 +87,4 @@ SEOItem.defaultProps = {
   },
 };
 
-export default SEOItem;
+export default React.memo(SEOItem);

@@ -7,7 +7,7 @@ const comps = {
   "nav001": dynamic(() => import("./Navbar001"), {suspense: true}),
 };
 
-const HeaderSection = ({data}: GlobalNavbarProps) : JSX.Element => {
+const Navbar = ({data}: GlobalNavbarProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
@@ -18,6 +18,6 @@ const HeaderSection = ({data}: GlobalNavbarProps) : JSX.Element => {
   );
 };
 
-HeaderSection.defaultProps = {layout: "default"};
+Navbar.defaultProps = {layout: "default"};
 
-export default HeaderSection;
+export default React.memo(Navbar);

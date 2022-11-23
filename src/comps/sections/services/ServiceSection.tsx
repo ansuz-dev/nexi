@@ -22,4 +22,4 @@ const ServiceSection = ({data}: GlobalServiceSectionProps) : JSX.Element => {
 
 ServiceSection.defaultProps = {layout: "default"};
 
-export default ServiceSection;
+export default React.memo(ServiceSection);

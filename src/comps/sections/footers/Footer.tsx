@@ -7,7 +7,7 @@ const comps = {
   "footer001": dynamic(() => import("./Footer001"), {suspense: true}),
 };
 
-const HeaderSection = ({data}: GlobalFooterProps) : JSX.Element => {
+const FooterSection = ({data}: GlobalFooterProps) : JSX.Element => {
   const layout = data.layout ?? "default";
   const Component = comps[layout];
 
@@ -18,6 +18,6 @@ const HeaderSection = ({data}: GlobalFooterProps) : JSX.Element => {
   );
 };
 
-HeaderSection.defaultProps = {layout: "default"};
+FooterSection.defaultProps = {layout: "default"};
 
-export default HeaderSection;
+export default React.memo(FooterSection);

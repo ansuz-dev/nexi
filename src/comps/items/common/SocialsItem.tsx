@@ -118,4 +118,4 @@ SocialsItem.defaultProps = {
   instagram: null,
 };
 
-export default SocialsItem;
+export default React.memo(SocialsItem);

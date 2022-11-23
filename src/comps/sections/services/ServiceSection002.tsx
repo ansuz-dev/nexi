@@ -46,4 +46,4 @@ const ServiceSection002 = ({data, classes}: ServiceSectionProps): JSX.Element =>
 
 ServiceSection002.propTypes = {};
 
-export default ServiceSection002;
+export default React.memo(ServiceSection002);

@@ -20,4 +20,4 @@ const StatsSection = ({data}: GlobalStatsSectionProps) : JSX.Element => {
 
 StatsSection.defaultProps = {layout: "default"};
 
-export default StatsSection;
+export default React.memo(StatsSection);

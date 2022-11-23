@@ -96,4 +96,4 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
 
 HeaderSection001.propTypes = {};
 
-export default HeaderSection001;
+export default React.memo(HeaderSection001);

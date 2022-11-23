@@ -20,4 +20,4 @@ const HeaderSection = ({data}: GlobalHeaderSectionProps) : JSX.Element => {
 
 HeaderSection.defaultProps = {layout: "default"};
 
-export default HeaderSection;
+export default React.memo(HeaderSection);

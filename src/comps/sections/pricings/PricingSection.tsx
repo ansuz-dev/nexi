@@ -20,4 +20,4 @@ const PricingSection = ({data}: GlobalPricingSectionProps) : JSX.Element => {
 
 PricingSection.defaultProps = {layout: "default"};
 
-export default PricingSection;
+export default React.memo(PricingSection);

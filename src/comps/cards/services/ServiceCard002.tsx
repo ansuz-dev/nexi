@@ -57,7 +57,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
                   loading="lazy"
                   placeholder="blur"
                   blurDataURL={thumbnailUrl}
-                  style={{objectFit: "cover"}}
+                  className="object-contain object-center"
                 />
               )
             }
