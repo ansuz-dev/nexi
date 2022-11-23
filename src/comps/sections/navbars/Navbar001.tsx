@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
@@ -47,15 +47,17 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
           {
             Boolean(logoUrl) && (
               <Image
-                fill
                 unoptimized
+                priority
+                unselectable="on"
+                layout="fill"
                 alt="logo"
                 src={logoUrl}
                 draggable={false}
-                loading="lazy"
                 placeholder="blur"
                 blurDataURL={thumbnailUrl}
-                style={{objectFit: "contain", objectPosition: "left"}}
+                objectFit="contain"
+                objectPosition="left center"
               />
             )
           }

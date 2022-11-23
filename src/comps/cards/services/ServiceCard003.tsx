@@ -50,10 +50,11 @@ const ServiceCard003 = ({service, classes}: ServiceCardProps): JSX.Element => {
               alt={name}
               src={photoUrl}
               draggable={false}
+              unselectable="on"
               loading="lazy"
               placeholder="blur"
               blurDataURL={shimmerBlur(photoHeight, photoHeight)}
-              style={{objectFit: "cover"}}
+              className="object-contain object-center"
             />
           )
         }

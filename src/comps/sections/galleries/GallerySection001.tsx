@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
@@ -51,15 +51,17 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
               <SwiperSlide key={index}>
                 <div className="relative w-full h-80">
                   <Image
-                    fill
+                    layout="fill"
                     unoptimized
                     alt="gallery item"
                     src={photoUrl}
                     draggable={false}
+                    unselectable="on"
                     loading="lazy"
                     placeholder="blur"
                     blurDataURL={thumbnailUrl}
-                    style={{objectFit: "cover"}}
+                    objectFit="cover"
+                    objectPosition="center"
                   />
                 </div>
               </SwiperSlide>

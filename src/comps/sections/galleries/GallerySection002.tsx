@@ -1,6 +1,6 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
 import {GallerySectionProps} from "./gallerysectionprops";
@@ -54,15 +54,17 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
                     className={`relative ${photoClasses[index]}`}
                   >
                     <Image
-                      fill
+                      layout="fill"
                       unoptimized
                       alt="gallery item"
                       src={photoUrl}
                       draggable={false}
+                      unselectable="on"
                       loading="lazy"
                       placeholder="blur"
                       blurDataURL={thumbnailUrl}
-                      style={{objectFit: "cover"}}
+                      objectFit="cover"
+                      objectPosition="center"
                     />
                   </div>
                 );
