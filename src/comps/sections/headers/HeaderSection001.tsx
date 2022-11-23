@@ -9,7 +9,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
   const subtitle = getAttr(data, "subtitle") as string;
   const links = getAttr(data, "links") as Array<unknown> | undefined;
-  const photos = getAttr(data, "photos") as Array<unknown> | undefined;
+  const photos = getAttr(data, "photos", "data") as Array<unknown> | undefined;
   const photo = photos?.[0];
   let photoUrl = getFormatUrl(photo, "small") as string;
   if (!photo) {

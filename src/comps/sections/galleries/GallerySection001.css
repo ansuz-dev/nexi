@@ -1,0 +1,12 @@
+
+.swiper-pagination-bullet {
+  width: 16px !important;
+  height: 16px !important;
+  border-width: 2px !important;
+  border-color: var(--swiper-pagination-color,var(--swiper-theme-color)) !important;
+  background: transparent !important;
+}
+
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--swiper-pagination-color,var(--swiper-theme-color)) !important;
+}
