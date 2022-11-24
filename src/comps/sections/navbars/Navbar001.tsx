@@ -15,7 +15,7 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
   const thumbnailUrl = getFormatUrl(logo, "thumbnail") as string;
 
   const rootClass = cx(
-    "navbar-001",
+    "nav001",
     "py-3 bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
     classes?.root,
   );

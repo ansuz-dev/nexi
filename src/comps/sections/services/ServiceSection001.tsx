@@ -10,7 +10,7 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   const services = getAttr(data, "services") as Array<unknown>;
 
   const rootClass = cx(
-    "servicesection-001",
+    "ss001",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,

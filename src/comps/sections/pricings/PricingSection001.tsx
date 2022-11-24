@@ -13,7 +13,7 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
   const plans = getAttr(data, "plans") as Array<unknown>;
 
   const rootClass = cx(
-    "pricingsection-001",
+    "ps001",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,

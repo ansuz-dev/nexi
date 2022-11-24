@@ -12,7 +12,7 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
   const photos = getAttr(data, "photos", "data") as Array<unknown>;
 
   const rootClass = cx(
-    "gallerysection-001",
+    "gs001",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,
@@ -41,7 +41,7 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
           }}
         >
           {Boolean(photos) && photos.map((photo, index) => {
-            let photoUrl = getFormatUrl(photo, "small") as string;
+            let photoUrl = getFormatUrl(photo, "medium") as string;
             if (!photo) {
               photoUrl = getUrl(photo) as string;
             }

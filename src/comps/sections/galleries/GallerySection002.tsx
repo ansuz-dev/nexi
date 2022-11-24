@@ -18,7 +18,7 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
   const photos = getAttr(data, "photos", "data") as Array<unknown>;
 
   const rootClass = cx(
-    "gallerysection-002",
+    "gs002",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,

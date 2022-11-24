@@ -12,7 +12,7 @@ const StatsSection001 = ({data, classes}: StatsSectionProps): JSX.Element => {
   const links = getAttr(data, "links") as Array<unknown>;
 
   const rootClass = cx(
-    "servicesection-001",
+    "sts001",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,

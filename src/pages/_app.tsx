@@ -1,7 +1,7 @@
 import React from "react";
 
 import "../styles/globals.css";
-import "../comps/sections/galleries/GallerySection001.css";
+import "../styles/gs001.scss";
 
 import type {AppProps} from "next/app";
 

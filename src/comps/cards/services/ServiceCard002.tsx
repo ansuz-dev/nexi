@@ -10,7 +10,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   const photo = getAttr(service, "photo");
   const link = getAttr(service, "link") as string || "";
 
-  let photoUrl = getFormatUrl(photo, "small") as string;
+  let photoUrl = getFormatUrl(photo, "medium") as string;
   if (!photo) {
     photoUrl = getUrl(photo) as string;
   }

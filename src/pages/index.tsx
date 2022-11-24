@@ -10,6 +10,7 @@ import Footer001 from "../comps/sections/footers/Footer001";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import GallerySection from "../comps/sections/galleries/GallerySection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -59,7 +60,8 @@ const Home = (): JSX.Element => (
         </div>
 
         <div>
-          <GallerySection002
+          <GallerySection
+            layout="gs001"
             data={{
               title: "Gallery",
               photos: {

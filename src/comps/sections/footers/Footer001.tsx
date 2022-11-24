@@ -20,7 +20,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
   const photoUrl = getUrl(photo) as string;
 
   const rootClass = cx(
-    "footer-001",
+    "footer001",
     "py-8 bg-neutral-100 overflow-hidden",
     classes?.root,
   );
