@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import {getLayout} from "../../../utils";
 import {GlobalStatsSectionProps} from "./statssectionprops";
 
 const comps = {
@@ -7,13 +8,12 @@ const comps = {
   "sts001": dynamic(() => import("./StatsSection001"), {suspense: true}),
 };
 
-const StatsSection = ({data, ...rest}: GlobalStatsSectionProps) : JSX.Element => {
-  const layout = data.layout ?? "default";
-  const Component = comps[layout];
+const StatsSection = (props: GlobalStatsSectionProps) : JSX.Element => {
+  const Component = getLayout(comps, props.data.layout);
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} {...rest} />
+      <Component {...props} />
     </React.Suspense>
   );
 };

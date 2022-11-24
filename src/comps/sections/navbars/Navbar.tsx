@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import {getLayout} from "../../../utils";
 import {GlobalNavbarProps} from "./navbarprops";
 
 const comps = {
@@ -7,13 +8,12 @@ const comps = {
   "nav001": dynamic(() => import("./Navbar001"), {suspense: true}),
 };
 
-const Navbar = ({data, ...rest}: GlobalNavbarProps) : JSX.Element => {
-  const layout = data.layout ?? "default";
-  const Component = comps[layout];
+const Navbar = (props: GlobalNavbarProps) : JSX.Element => {
+  const Component = getLayout(comps, props.data.layout);
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} {...rest} />
+      <Component {...props} />
     </React.Suspense>
   );
 };

@@ -25,7 +25,7 @@ export type PreviewSectionLayouts =
   | "prs001";
 
 export interface GlobalPreviewSectionData extends PreviewSectionData {
-  layout?: PreviewSectionLayouts;
+  layout?: string;
 }
 
 export interface GlobalPreviewSectionProps extends PreviewSectionProps {

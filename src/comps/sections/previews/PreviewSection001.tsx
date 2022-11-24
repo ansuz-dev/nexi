@@ -27,7 +27,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   }, []);
 
   const rootClass = cx(
-    "ss001",
+    "prs001",
     "py-12",
     {"bg-neutral-50": isGray(background)},
     classes?.root,

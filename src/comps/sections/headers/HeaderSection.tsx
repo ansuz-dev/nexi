@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import {getLayout} from "../../../utils";
 import {GlobalHeaderSectionProps} from "./headersectionprops";
 
 const comps = {
@@ -7,13 +8,12 @@ const comps = {
   "hs001": dynamic(() => import("./HeaderSection001"), {suspense: true}),
 };
 
-const HeaderSection = ({data, ...rest}: GlobalHeaderSectionProps) : JSX.Element => {
-  const layout = data.layout ?? "default";
-  const Component = comps[layout];
+const HeaderSection = (props: GlobalHeaderSectionProps) : JSX.Element => {
+  const Component = getLayout(comps, props.data.layout);
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} {...rest} />
+      <Component {...props} />
     </React.Suspense>
   );
 };

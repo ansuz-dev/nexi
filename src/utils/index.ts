@@ -1,7 +1,28 @@
 /* eslint-disable prefer-named-capture-group */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+
+import {ComponentType} from "react";
+
 // eslint-disable-next-line no-process-env
 const domain = process.env.NEXT_PUBLIC_STRAPI_API_URL as string;
+
+export interface Layouts<P> {
+  [key: string]: ComponentType<P>;
+}
+
+export function getLayout<P>(comps: Layouts<P>, layout?:string): ComponentType<P> {
+  const i = layout ?? "default";
+
+  if (Object.hasOwn(comps, i)) {
+    return comps[i];
+  }
+
+  if (Object.hasOwn(comps, "default")) {
+    return comps["default"];
+  }
+
+  return () => null;
+}
 
 export const getAttr = (obj: unknown, ...attrs: Array<string>): unknown => {
   const val = attrs.reduce(
@@ -38,7 +59,7 @@ export const getFormatUrl = (obj: unknown, type: string, withDomain = true): str
   return withDomain ? `${domain}${url}` : url;
 };
 
-const shimmer = (w: number, h: number) => `
+const shimmer = (w: number, h: number): string => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
     <linearGradient id="g">

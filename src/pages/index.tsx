@@ -12,6 +12,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import GallerySection from "../comps/sections/galleries/GallerySection";
 import PreviewSection001 from "../comps/sections/previews/PreviewSection001";
+import PreviewSection from "../comps/sections/previews/PreviewSection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -78,8 +79,9 @@ const Home = (): JSX.Element => (
         </div>
       </div>
 
-      <PreviewSection001
+      <PreviewSection
         data={{
+          layout: "prs002",
           title: "Gallery",
           document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
         }}

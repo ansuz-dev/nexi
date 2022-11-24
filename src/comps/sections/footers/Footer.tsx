@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import {getLayout} from "../../../utils";
 import {GlobalFooterProps} from "./footerprops";
 
 const comps = {
@@ -7,13 +8,12 @@ const comps = {
   "footer001": dynamic(() => import("./Footer001"), {suspense: true}),
 };
 
-const FooterSection = ({data, ...rest}: GlobalFooterProps) : JSX.Element => {
-  const layout = data.layout ?? "default";
-  const Component = comps[layout];
+const FooterSection = (props: GlobalFooterProps) : JSX.Element => {
+  const Component = getLayout(comps, props.data.layout);
 
   return (
     <React.Suspense fallback={"Loading..."}>
-      <Component data={data} {...rest} />
+      <Component {...props} />
     </React.Suspense>
   );
 };

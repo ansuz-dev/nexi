@@ -10,7 +10,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
   const unit = getAttr(pricing, "unit") as string;
   const plan = getAttr(pricing, "plan") as string | undefined;
   const recommended = getAttr(pricing, "recommended") as string;
-  const unfixed = getAttr(pricing, "unfixed") as boolean;
+  const reversed = getAttr(pricing, "reversed") as boolean;
   const link = getAttr(pricing, "link") as string;
   const linkTitle = getAttr(pricing, "linkTitle") as string;
 
@@ -57,7 +57,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
       <div className={contentClass}>
         <div className="flex flex-col items-center space-y-2">
           <h6 className={titleClass}>{title}</h6>
-          <div className="flex space-x-1 items-end">
+          <div className={`flex space-x-1 items-end ${reversed ? "flex-row-reverse" : ""}`}>
             <span className={priceClass}>{price}</span>
             <div className="py-1.5">
               <span className={unitClass}>{unit}</span>
