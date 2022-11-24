@@ -11,6 +11,7 @@ import Footer001 from "../comps/sections/footers/Footer001";
 import "swiper/css";
 import "swiper/css/pagination";
 import GallerySection from "../comps/sections/galleries/GallerySection";
+import PreviewSection001 from "../comps/sections/previews/PreviewSection001";
 
 const Home = (): JSX.Element => (
   <div>
@@ -60,7 +61,7 @@ const Home = (): JSX.Element => (
         </div>
 
         <div>
-          <GallerySection
+          {/* <GallerySection
             layout="gs001"
             data={{
               title: "Gallery",
@@ -73,9 +74,16 @@ const Home = (): JSX.Element => (
                 ],
               },
             }}
-          />
+          /> */}
         </div>
       </div>
+
+      <PreviewSection001
+        data={{
+          title: "Gallery",
+          document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
+        }}
+      />
     </main>
 
     <Footer001
