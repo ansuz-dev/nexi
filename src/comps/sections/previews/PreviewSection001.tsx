@@ -9,6 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc
 = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
 const defaultWidth = 300;
+const marginWidth = 40;
 
 const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
@@ -18,11 +19,13 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   const fileUrl = getUrl(document);
 
   const [pdfWidth, setPdfWidth] = useState(defaultWidth);
-  const pdfRef = useRef();
+  const pdfRef = useRef<HTMLDivElement>(null);
 
-  const [numPages, setNumPages] = useState(null);
+  const [numPages, setNumPages] = useState<number>(0);
 
-  const onDocumentLoadSuccess = useCallback(pdf => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const onDocumentLoadSuccess = useCallback((pdf: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
     setNumPages(pdf.numPages);
   }, []);
 
@@ -54,10 +57,10 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   );
 
   useEffect(() => {
-    setPdfWidth(pdfRef.current.getBoundingClientRect().width - 40);
+    setPdfWidth((pdfRef.current?.getBoundingClientRect()?.width ?? defaultWidth) - marginWidth);
 
     const onResize = () => {
-      setPdfWidth(pdfRef.current.getBoundingClientRect().width - 40);
+      setPdfWidth((pdfRef.current?.getBoundingClientRect()?.width ?? defaultWidth) - marginWidth);
     };
 
     window.addEventListener("resize", onResize);
