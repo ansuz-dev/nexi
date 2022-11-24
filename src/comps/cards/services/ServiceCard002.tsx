@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
@@ -49,15 +49,17 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
             {
               Boolean(photoUrl) && (
                 <Image
-                  fill
+                  layout="fill"
                   unoptimized
                   alt={name}
                   src={photoUrl}
                   draggable={false}
+                  unselectable="on"
                   loading="lazy"
                   placeholder="blur"
                   blurDataURL={thumbnailUrl}
-                  className="object-contain object-center"
+                  objectFit="contain"
+                  objectPosition="center"
                 />
               )
             }
