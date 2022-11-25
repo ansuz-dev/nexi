@@ -19,7 +19,7 @@ SampleSection.args = {
     title: "LE GROUPE 24/7 HESTIA",
     subtitle: "— une entreprise familiale",
     background: "gray",
-    photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}}},
+    photo: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/IMG_1925_1_0535f4e75e.png"}}},
     quotes: [
       {
         person: "Rose, Fondatrice de HESTIA ECOBAT",
