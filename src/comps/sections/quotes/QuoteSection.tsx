@@ -1,14 +1,14 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import {getLayout} from "../../../utils";
-import {GlobalHeaderSectionProps} from "./quotesectionprops";
+import {GlobalQuoteSectionProps} from "./quotesectionprops";
 
 const comps = {
   "default": dynamic(() => import("./QuoteSection001"), {suspense: true}),
-  "hs001": dynamic(() => import("./QuoteSection001"), {suspense: true}),
+  "qs001": dynamic(() => import("./QuoteSection001"), {suspense: true}),
 };
 
-const HeaderSection = (props: GlobalHeaderSectionProps) : JSX.Element => {
+const QuoteSection = (props: GlobalQuoteSectionProps) : JSX.Element => {
   const Component = getLayout(comps, props.data.layout);
 
   return (
@@ -18,6 +18,6 @@ const HeaderSection = (props: GlobalHeaderSectionProps) : JSX.Element => {
   );
 };
 
-HeaderSection.defaultProps = {layout: "default"};
+QuoteSection.defaultProps = {layout: "default"};
 
-export default React.memo(HeaderSection);
+export default React.memo(QuoteSection);
