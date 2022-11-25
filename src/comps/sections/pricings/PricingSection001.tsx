@@ -66,7 +66,6 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
         </div>
         {
           Boolean(plans) && (
-
             <div className="grid grid-cols-4">
               {
                 plans.map((pricing, index) => (

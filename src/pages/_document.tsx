@@ -7,11 +7,11 @@ const MyDocument = (): JSX.Element => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <meta name="author" content="Ebook Công Nghệ" />
-      <meta name="copyright" content="Ebook Công Nghệ" />
+      <meta name="author" content="Nexi" />
+      <meta name="copyright" content="Nexi" />
 
-      <meta name="application-name" content="EbookCongNghe" />
-      <meta name="apple-mobile-web-app-title" content="EbookCongNghe" />
+      <meta name="application-name" content="Nexi" />
+      <meta name="apple-mobile-web-app-title" content="Nexi" />
 
       <meta property="og:type" content="website" />
 

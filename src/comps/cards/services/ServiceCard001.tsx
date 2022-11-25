@@ -17,7 +17,7 @@ const ServiceCard001 = ({service, classes}: ServiceCardProps): JSX.Element => {
 
   const rootClass = cx(
     "servicecard-001",
-    "border-2 border-neutral-100 rounded-md overflow-hidden bg-white",
+    "border-2 border-neutral-100 rounded-md overflow-hidden bg-white hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
     classes?.root,
   );
   const photoClass = cx(

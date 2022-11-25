@@ -57,7 +57,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
       <div className={contentClass}>
         <div className="flex flex-col items-center space-y-2">
           <h6 className={titleClass}>{title}</h6>
-          <div className={`flex space-x-1 items-end ${reversed ? "flex-row-reverse" : ""}`}>
+          <div className={`flex space-x-1 items-end ${reversed ? "flex-row-reverse space-x-reverse" : ""}`}>
             <span className={priceClass}>{price}</span>
             <div className="py-1.5">
               <span className={unitClass}>{unit}</span>

@@ -83,6 +83,7 @@ const Home = (): JSX.Element => (
         data={{
           layout: "prs002",
           title: "Gallery",
+          subtitle: "Lorem ipsum dolor sit amen",
           document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
         }}
       />

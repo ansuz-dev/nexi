@@ -47,7 +47,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   );
   const subtitleClass = cx(
     "section-subtitle",
-    "text-5xl leading-snug text-center",
+    "text-base leading-normal tracking-[0.5px] text-center",
     classes?.subtitle,
   );
   const documentClass = cx(
@@ -76,7 +76,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
         <div className="grid lg:grid-cols-6 lg:gap-6">
           <div className="lg:col-start-2 lg:col-span-4 space-y-4">
             {Boolean(title) && <h3 className={titleClass}>{title}</h3>}
-            {Boolean(subtitle) && <h3 className={subtitleClass}>{subtitle}</h3>}
+            {Boolean(subtitle) && <p className={subtitleClass}>{subtitle}</p>}
           </div>
         </div>
         {
@@ -96,7 +96,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
                       width={pdfWidth}
                       renderAnnotationLayer={false}
                       renderTextLayer={false}
-                      className="shadow-md"
+                      className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
                     />
                   ))}
                 </Document>
