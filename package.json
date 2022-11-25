@@ -1,6 +1,6 @@
 {
   "name": "@ansuzdev/nexi",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "scripts": {
     "dev": "next dev",
     "prebuild": "rm -rf .tsbuildinfo dist",
