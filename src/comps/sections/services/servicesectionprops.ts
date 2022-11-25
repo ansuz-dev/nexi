@@ -24,7 +24,8 @@ export type ServiceSectionLayouts =
   "default"
   | "ss001"
   | "ss002"
-  | "ss003";
+  | "ss003"
+  | "ss004";
 
 export interface GlobalServiceSectionData extends ServiceSectionData {
   layout?: ServiceSectionLayouts;
