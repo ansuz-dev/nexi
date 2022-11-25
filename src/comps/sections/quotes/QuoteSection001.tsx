@@ -37,8 +37,8 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
 
   return (
     <section className={rootClass}>
-      <div className="grid grid-cols-12 gap-12">
-        <div className="col-start-2 col-span-7">
+      <div className="grid grid-cols-12 gap-6">
+        <div className="col-start-2 col-span-6">
           <div className={containerClass}>
             <div>
               <h3 className={titleClass}>{title}</h3>
@@ -60,7 +60,7 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
             )}
           </div>
         </div>
-        <div className="col-span-3">
+        <div className="col-span-4">
           <div className="relative w-full h-full">
             <Image
               layout="fill"
