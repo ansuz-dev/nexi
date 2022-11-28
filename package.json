@@ -18,6 +18,7 @@
     "@tailwindcss/line-clamp": "^0.4.2",
     "classnames": "^2.3.2",
     "react-pdf": "^6.2.0",
+    "react-select": "^5.6.1",
     "swiper": "^8.4.5"
   },
   "devDependencies": {
@@ -32,6 +33,7 @@
     "@storybook/manager-webpack5": "^6.5.13",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",

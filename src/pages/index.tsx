@@ -13,6 +13,9 @@ import "swiper/css/pagination";
 import GallerySection from "../comps/sections/galleries/GallerySection";
 import PreviewSection001 from "../comps/sections/previews/PreviewSection001";
 import PreviewSection from "../comps/sections/previews/PreviewSection";
+import TextField001 from "../comps/items/inputs/TextField001";
+import PhoneIcon from "../../assets/phone.svg";
+import Select001 from "../comps/items/inputs/Select001";
 
 const Home = (): JSX.Element => (
   <div>
@@ -43,7 +46,7 @@ const Home = (): JSX.Element => (
 
     <main>
 
-      <div>
+      <div className="container mx-auto space-y-8 py-16">
         <Button001
           link
           label="Click me"
@@ -51,42 +54,30 @@ const Home = (): JSX.Element => (
           type="outlined"
         />
 
-        <div className="w-80">
-          <ServiceCard003
-            service={{
-              name: "Lorem ipsum dolor sit amen",
-              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}}},
-            }}
+        <div className="space-y-4">
+          <TextField001
+            label="Field name"
+            leftIcon={<PhoneIcon className="fill-primary-600" />}
+            rightIcon={<PhoneIcon className="fill-primary-600" />}
+          />
+
+          <TextField001
+            color="secondary"
+            label="Field name"
+            leftIcon={<PhoneIcon className="fill-secondary-600" />}
+            rightIcon={<PhoneIcon className="fill-secondary-600" />}
+          />
+
+          <Select001
+            options={[
+              {value: "A", label: "A"},
+              {value: "b", label: "b"},
+              {value: "C", label: "C"},
+              {value: "D", label: "D"},
+            ]}
           />
         </div>
-
-        <div>
-          {/* <GallerySection
-            layout="gs001"
-            data={{
-              title: "Gallery",
-              photos: {
-                data: [
-                  {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}},
-                  {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}},
-                  {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}},
-                  {attributes: {url: "https://images.unsplash.com/photo-1604754742629-3e5728249d73?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"}},
-                ],
-              },
-            }}
-          /> */}
-        </div>
       </div>
-
-      <PreviewSection
-        data={{
-          layout: "prs002",
-          title: "Gallery",
-          subtitle: "Lorem ipsum dolor sit amen",
-          document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
-        }}
-      />
     </main>
 
     <Footer001
