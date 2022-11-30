@@ -1,21 +1,24 @@
 import React from "react";
 import Head from "next/head";
 import SEOItem from "../comps/items/common/SEOItem";
-import Button001 from "../comps/items/buttons/Button001";
+import Button from "../comps/items/buttons/Button";
+import TextField from "../comps/items/inputs/TextField";
+import Select from "../comps/items/inputs/Select";
+
 import ServiceCard003 from "../comps/cards/services/ServiceCard003";
 import GallerySection001 from "../comps/sections/galleries/GallerySection001";
 import GallerySection002 from "../comps/sections/galleries/GallerySection002";
 import Navbar001 from "../comps/sections/navbars/Navbar001";
 import Footer001 from "../comps/sections/footers/Footer001";
 
-import "swiper/css";
-import "swiper/css/pagination";
 import GallerySection from "../comps/sections/galleries/GallerySection";
 import PreviewSection001 from "../comps/sections/previews/PreviewSection001";
 import PreviewSection from "../comps/sections/previews/PreviewSection";
-import TextField001 from "../comps/items/inputs/TextField001";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 import PhoneIcon from "../../assets/phone.svg";
-import Select001 from "../comps/items/inputs/Select001";
 
 const Home = (): JSX.Element => (
   <div>
@@ -48,13 +51,13 @@ const Home = (): JSX.Element => (
 
       <div className="container mx-auto space-y-8 py-16">
         <div className="space-y-4">
-          <Button001
+          <Button
             className="w-full"
             label="Click me"
             type="outlined"
           />
 
-          <Button001
+          <Button
             link
             className="w-full"
             label="Click me"
@@ -64,12 +67,12 @@ const Home = (): JSX.Element => (
         </div>
 
         <div className="space-x-4">
-          <Button001
+          <Button
             label="Click me"
             type="outlined"
           />
 
-          <Button001
+          <Button
             link
             label="Click me"
             href="/test"
@@ -78,7 +81,7 @@ const Home = (): JSX.Element => (
         </div>
 
         <div className="space-y-4">
-          <TextField001
+          <TextField
             label="Field name"
             placeholder="Name"
             type="date"
@@ -86,7 +89,7 @@ const Home = (): JSX.Element => (
             righticon={<PhoneIcon className="fill-current" />}
           />
 
-          <TextField001
+          <TextField
             color="secondary"
             label="Field name"
             type="time"
@@ -95,7 +98,7 @@ const Home = (): JSX.Element => (
             righticon={<PhoneIcon className="fill-current" />}
           />
 
-          <Select001
+          <Select
             label="Service"
             size="medium"
             color="primary"
@@ -108,7 +111,7 @@ const Home = (): JSX.Element => (
             ]}
           />
 
-          <Select001
+          <Select
             label="Test"
             size="medium"
             color="secondary"

@@ -25,7 +25,14 @@ export interface GlobalInputProps extends InputProps {
   layout: InputLayouts;
 }
 
-export interface SelectProps extends InputProps {
+export interface SelectProps {
+  label?: string;
+  helper?: string;
+  placeholder?: string;
+  color?: InputColors;
+  size?: InputSizes;
+  error?: boolean;
+  className?: string;
   options?: Array<unknown>;
 }
 
