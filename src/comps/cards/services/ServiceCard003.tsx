@@ -14,7 +14,7 @@ const ServiceCard003 = ({service, classes}: ServiceCardProps): JSX.Element => {
   const photoUrl = getUrl(photo) as string;
 
   const rootClass = cx(
-    "servicecard-003",
+    "servicecard003",
     "p-6 space-y-2",
     classes?.root,
   );

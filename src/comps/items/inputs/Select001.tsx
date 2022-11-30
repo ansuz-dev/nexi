@@ -1,46 +1,47 @@
 import React from "react";
-import Select, {GroupBase, StylesConfig} from "react-select";
-import {InputColors, InputSizes, SelectProps} from "./inputprops";
-
-declare module "react-select/dist/declarations/src/Select" {
-  export interface Props<
-    Option,
-    IsMulti extends boolean,
-    Group extends GroupBase<Option>
-  > {
-    size?: InputSizes;
-    color?: InputColors;
-  }
-}
-
-type IsMulti = false;
-
-const heights = {
-  "large": 48,
-  "medium": 40,
-  "small": 32,
-};
+import cx from "classnames";
+import Select from "react-select";
+import {SelectProps} from "./inputprops";
 
 const Select001 = (props: SelectProps): JSX.Element => {
-  const styles: StylesConfig<unknown, IsMulti> = {
-    control: (baseStyles, state) => {
-      console.log("baseStyles:", baseStyles);
-      console.log("state:", state);
+  const {
+    label,
+    helper,
+    color,
+    size,
+    error,
+    ...rest
+  } = props;
 
-      return {
-        ...baseStyles,
-        height: heights[state.selectProps.size ?? "medium"],
-        borderColor: state.isFocused ? "grey" : "red",
-      };
-    },
-  };
+  const rootClass = cx(
+    "select001",
+    "space-y-1",
+  );
+  const labelClass = cx(
+    "select-label",
+    "text-base leading-normal font-semibold tracking-[0.5px] text-black-secondary",
+  );
+  const selectClass = cx({
+    "select-select": true,
+    [color as string]: true,
+    [size as string]: true,
+  });
+  const helperClass = cx(
+    "select-helper",
+    "text-xs md:text-sm text-black-tertiary",
+    {"text-red-600": error},
+  );
 
   return (
-    <Select
-      {...props}
-      classNamePrefix="select-001"
-      styles={styles}
-    />
+    <div className={rootClass}>
+      {Boolean(label) && <label className={labelClass}>{label}</label>}
+      <Select
+        {...rest}
+        className={selectClass}
+        classNamePrefix="select001"
+      />
+      {Boolean(helper) && <span className={helperClass}>{helper}</span>}
+    </div>
   );
 };
 

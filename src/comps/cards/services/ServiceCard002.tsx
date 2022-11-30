@@ -17,7 +17,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
   const rootClass = cx(
-    "servicecard-002",
+    "servicecard002",
     "border-2 border-transparent rounded-md overflow-hidden bg-white",
     "hover:border-primary-500 hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
     classes?.root,

@@ -1,0 +1,70 @@
+
+.select001 {
+  .select-select {
+    .select001__control {
+      @apply border-neutral-200 hover:border-neutral-400;
+    }
+
+    .select001__input {
+      @apply text-base leading-normal tracking-[0.5px] ;
+    }
+
+    .select001__placeholder {
+      @apply text-neutral-400;
+    }
+
+    &.primary {
+      .select001__control--is-focused {
+        @apply border-primary-600 shadow-none;
+
+        .select001__indicator svg {
+          @apply fill-primary-600;
+        }
+      }
+
+      .select001__option--is-focused {
+        @apply bg-primary-50;
+      }
+
+      .select001__option--is-selected {
+        @apply bg-primary-400;
+      }
+    }
+
+    &.secondary {
+      .select001__control--is-focused {
+        @apply border-secondary-600 shadow-none;
+
+        .select001__indicator svg {
+          @apply fill-secondary-600;
+        }
+      }
+
+      .select001__option--is-focused {
+        @apply bg-secondary-50;
+      }
+
+      .select001__option--is-selected {
+        @apply bg-secondary-400;
+      }
+    }
+
+    &.small {
+      .select001__control {
+        @apply h-8;
+      }
+    }
+
+    &.medium {
+      .select001__control {
+        @apply h-10;
+      }
+    }
+
+    &.large {
+      .select001__control {
+        @apply h-12;
+      }
+    }
+  }
+}

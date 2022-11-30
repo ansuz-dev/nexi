@@ -1,3 +1,5 @@
+import {HTMLInputTypeAttribute} from "react";
+
 export type InputColors = "primary" | "secondary";
 
 export type InputSizes = "large" | "medium" | "small";
@@ -9,6 +11,8 @@ export type SelectLayouts = "default" | "select001";
 export interface InputProps {
   label?: string;
   helper?: string;
+  type?: HTMLInputTypeAttribute;
+  placeholder?: string;
   color?: InputColors;
   size?: InputSizes;
   error?: boolean;

@@ -5,7 +5,7 @@ import {ButtonProps} from "./buttonprops";
 
 const Button001 = (props: ButtonProps) : JSX.Element => {
   const rootClass = cx(
-    "button-001",
+    "button001",
     {
       "inline-flex justify-center items-center rounded": true,
       "font-medium whitespace-nowrap": true,

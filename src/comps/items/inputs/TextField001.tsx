@@ -3,10 +3,19 @@ import cx from "classnames";
 import {InputProps} from "./inputprops";
 
 const TextField001 = React.forwardRef((props: InputProps, ref): JSX.Element => {
-  const {label, helper, color, size, lefticon, righticon, error} = props;
+  const {
+    label,
+    helper,
+    color,
+    size,
+    lefticon,
+    righticon,
+    error,
+    ...rest
+  } = props;
 
   const rootClass = cx(
-    "textfield-001",
+    "textfield001",
     "space-y-1",
   );
   const labelClass = cx(
@@ -15,7 +24,8 @@ const TextField001 = React.forwardRef((props: InputProps, ref): JSX.Element => {
   );
   const inputClass = cx(
     "input-input",
-    "text-base leading-normal tracking-[0.5px] w-full outline-none outline-neutral-200 outline-offset-0 outline-1 px-3 py-0 rounded bg-white",
+    "peer text-base leading-normal tracking-[0.5px] w-full outline-none outline-neutral-200 outline-offset-0 outline-1 px-3 py-0 rounded bg-white",
+    "placeholder:text-neutral-400 hover:outline-neutral-400",
     {
       "focus:outline-primary-600": color === "primary",
       "focus:outline-secondary-600": color === "secondary",
@@ -32,23 +42,39 @@ const TextField001 = React.forwardRef((props: InputProps, ref): JSX.Element => {
     "text-xs md:text-sm text-black-tertiary",
     {"text-red-600": error},
   );
+  const leftIconClass = cx(
+    "input-leftIcon",
+    "absolute left-2 w-6 h-6 overflow-hidden text-neutral-400",
+    {
+      "peer-focus:text-primary-600": color === "primary",
+      "peer-focus:text-secondary-600": color === "secondary",
+    },
+  );
+  const rightIconClass = cx(
+    "input-rightIcon",
+    "absolute right-2 w-6 h-6 overflow-hidden text-neutral-400",
+    {
+      "peer-focus:text-primary-600": color === "primary",
+      "peer-focus:text-secondary-600": color === "secondary",
+    },
+  );
 
   return (
     <div className={rootClass}>
       {Boolean(label) && <label className={labelClass}>{label}</label>}
       <div className="relative flex items-center">
-        {Boolean(lefticon) && (
-          <div className="absolute left-2 w-6 h-6 overflow-hidden">
-            {lefticon}
-          </div>
-        )}
         <input
           ref={ref}
           className={inputClass}
-          {...props}
+          {...rest}
         />
+        {Boolean(lefticon) && (
+          <div className={leftIconClass}>
+            {lefticon}
+          </div>
+        )}
         {Boolean(righticon) && (
-          <div className="absolute right-2 w-6 h-6 overflow-hidden">
+          <div className={rightIconClass}>
             {righticon}
           </div>
         )}
@@ -59,6 +85,7 @@ const TextField001 = React.forwardRef((props: InputProps, ref): JSX.Element => {
 });
 
 TextField001.defaultProps = {
+  type: "input",
   color: "primary",
   size: "medium",
   error: false,

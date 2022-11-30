@@ -8,7 +8,7 @@ const StatCard001 = ({stat, classes}: StatCardProps): JSX.Element => {
   const label = getAttr(stat, "label") as string;
 
   const rootClass = cx(
-    "statscard-001",
+    "statscard001",
     "bg-secondary-600 p-6 rounded",
     classes?.root,
   );

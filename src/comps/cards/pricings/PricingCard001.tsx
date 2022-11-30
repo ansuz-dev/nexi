@@ -17,7 +17,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
   const list = plan?.split("\n") ?? [];
 
   const rootClass = cx(
-    "statscard-001",
+    "pricingcard001",
     classes?.root,
   );
   const contentClass = cx(
