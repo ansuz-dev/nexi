@@ -1,8 +1,8 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/legacy/image";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
+import GhostImage from "../../items/images/GhostImage";
 import {HeaderSectionProps} from "./headersectionprops";
 
 const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
@@ -64,25 +64,17 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full -z-20">
-        <div className="relative w-full h-full">
-          {
-            Boolean(photoUrl) && (
-              <Image
-                layout="fill"
-                unoptimized
-                priority
-                alt={title}
-                src={photoUrl}
-                draggable={false}
-                unselectable="on"
-                placeholder="blur"
-                blurDataURL={thumbnailUrl}
-                objectFit="cover"
-                objectPosition="center"
-              />
-            )
-          }
-        </div>
+        <GhostImage
+          className="relative w-full h-full"
+          layout="fill"
+          priority
+          alt={title}
+          src={photoUrl}
+          placeholder="blur"
+          blurDataURL={thumbnailUrl}
+          objectFit="cover"
+          objectPosition="center"
+        />
       </div>
       <div
         className="absolute top-0 left-0 w-full h-full -z-10"

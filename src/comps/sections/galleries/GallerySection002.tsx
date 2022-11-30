@@ -1,8 +1,8 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/legacy/image";
 
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import GhostImage from "../../items/images/GhostImage";
 import {GallerySectionProps} from "./gallerysectionprops";
 
 const photoClasses = [
@@ -49,24 +49,18 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
                 const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
                 return (
-                  <div
+                  <GhostImage
                     key={index}
                     className={`relative ${photoClasses[index]}`}
-                  >
-                    <Image
-                      layout="fill"
-                      unoptimized
-                      alt="gallery item"
-                      src={photoUrl}
-                      draggable={false}
-                      unselectable="on"
-                      loading="lazy"
-                      placeholder="blur"
-                      blurDataURL={thumbnailUrl}
-                      objectFit="cover"
-                      objectPosition="center"
-                    />
-                  </div>
+                    layout="fill"
+                    alt="gallery item"
+                    src={photoUrl}
+                    loading="lazy"
+                    placeholder="blur"
+                    blurDataURL={thumbnailUrl}
+                    objectFit="cover"
+                    objectPosition="center"
+                  />
                 );
               })}
             </div>

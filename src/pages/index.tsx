@@ -5,15 +5,7 @@ import Button from "../comps/items/buttons/Button";
 import TextField from "../comps/items/inputs/TextField";
 import Select from "../comps/items/inputs/Select";
 
-import ServiceCard003 from "../comps/cards/services/ServiceCard003";
-import GallerySection001 from "../comps/sections/galleries/GallerySection001";
-import GallerySection002 from "../comps/sections/galleries/GallerySection002";
-import Navbar001 from "../comps/sections/navbars/Navbar001";
 import Footer001 from "../comps/sections/footers/Footer001";
-
-import GallerySection from "../comps/sections/galleries/GallerySection";
-import PreviewSection001 from "../comps/sections/previews/PreviewSection001";
-import PreviewSection from "../comps/sections/previews/PreviewSection";
 
 import "swiper/css";
 import "swiper/css/pagination";

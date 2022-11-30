@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/legacy/image";
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import GhostImage from "../../items/images/GhostImage";
 import {QuoteSectionProps} from "./quotesectionprops";
 
 const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
@@ -62,21 +62,17 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
             </div>
           </div>
           <div className="hidden lg:block col-span-3">
-            <div className="relative w-full h-full">
-              <Image
-                layout="fill"
-                unoptimized
-                alt="person"
-                src={photoUrl}
-                draggable={false}
-                unselectable="on"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL={thumbnailUrl}
-                objectFit="contain"
-                objectPosition="center bottom"
-              />
-            </div>
+            <GhostImage
+              className="relative w-full h-full"
+              layout="fill"
+              alt="person"
+              src={photoUrl}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL={thumbnailUrl}
+              objectFit="contain"
+              objectPosition="center bottom"
+            />
           </div>
         </div>
       </div>

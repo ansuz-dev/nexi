@@ -1,8 +1,8 @@
 import React from "react";
-import Image from "next/legacy/image";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import GhostImage from "../../items/images/GhostImage";
 import {ServiceCardProps} from "./servicecardprops";
 
 const ServiceCard004 = ({service, classes}: ServiceCardProps): JSX.Element => {
@@ -40,25 +40,17 @@ const ServiceCard004 = ({service, classes}: ServiceCardProps): JSX.Element => {
   return (
     <Link href={link}>
       <div className={rootClass}>
-        <div className={photoClass}>
-          {
-            Boolean(photoUrl) && (
-              <Image
-                layout="fill"
-                unoptimized
-                alt={name}
-                src={photoUrl}
-                draggable={false}
-                unselectable="on"
-                loading="lazy"
-                placeholder="blur"
-                blurDataURL={thumbnailUrl}
-                objectFit="contain"
-                objectPosition="center"
-              />
-            )
-          }
-        </div>
+        <GhostImage
+          className={photoClass}
+          layout="fill"
+          alt={name}
+          src={photoUrl}
+          loading="lazy"
+          placeholder="blur"
+          blurDataURL={thumbnailUrl}
+          objectFit="contain"
+          objectPosition="center"
+        />
         <div className={contentClass}>
           <p className={nameClass}>{name}</p>
         </div>

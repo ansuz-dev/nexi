@@ -1,9 +1,9 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/legacy/image";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
+import GhostImage from "../../items/images/GhostImage";
 import {NavbarProps} from "./navbarprops";
 
 const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
@@ -43,25 +43,19 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
   return (
     <nav className={rootClass}>
       <div className={containerClass}>
-        <div className={logoClass}>
-          {
-            Boolean(logoUrl) && (
-              <Image
-                unoptimized
-                priority
-                unselectable="on"
-                layout="fill"
-                alt="logo"
-                src={logoUrl}
-                draggable={false}
-                placeholder="blur"
-                blurDataURL={thumbnailUrl}
-                objectFit="contain"
-                objectPosition="left center"
-              />
-            )
-          }
-        </div>
+        <Link href="/">
+          <GhostImage
+            className={logoClass}
+            priority
+            layout="fill"
+            alt="logo"
+            src={logoUrl}
+            placeholder="blur"
+            blurDataURL={thumbnailUrl}
+            objectFit="contain"
+            objectPosition="left center"
+          />
+        </Link>
         {
           Boolean(links) && (
             <ul className={linksClass}>

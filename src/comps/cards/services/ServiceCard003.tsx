@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import cx from "classnames";
 import {getAttr, getUrl, shimmerBlur} from "../../../utils";
+import GhostImage from "../../items/images/GhostImage";
 import {ServiceCardProps} from "./servicecardprops";
 
 const photoHeight = 56;
@@ -41,24 +41,17 @@ const ServiceCard003 = ({service, classes}: ServiceCardProps): JSX.Element => {
 
   return (
     <div className={rootClass}>
-      <div className={photoClass}>
-        {
-          Boolean(photoUrl) && (
-            <Image
-              fill
-              unoptimized
-              alt={name}
-              src={photoUrl}
-              draggable={false}
-              unselectable="on"
-              loading="lazy"
-              placeholder="blur"
-              blurDataURL={shimmerBlur(photoHeight, photoHeight)}
-              className="object-contain object-center"
-            />
-          )
-        }
-      </div>
+      <GhostImage
+        className={photoClass}
+        layout="fill"
+        alt={name}
+        src={photoUrl}
+        loading="lazy"
+        placeholder="blur"
+        blurDataURL={shimmerBlur(photoHeight, photoHeight)}
+        objectFit="cover"
+        objectPosition="center"
+      />
       <div className={contentClass}>
         <h6 className={nameClass}>{name}</h6>
         <p className={descriptionClass}>{description}</p>

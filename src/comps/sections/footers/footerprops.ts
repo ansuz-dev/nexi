@@ -1,5 +1,3 @@
-import {ContactItemProps} from "../../items/common/ContactItem";
-
 export interface FooterData {
   logo?: unknown;
   photo?: unknown;

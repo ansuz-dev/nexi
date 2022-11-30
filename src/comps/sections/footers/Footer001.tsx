@@ -1,9 +1,9 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/image";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import ContactItem, {ContactItemProps} from "../../items/common/ContactItem";
 import SocialsItem from "../../items/common/SocialsItem";
+import GhostImage from "../../items/images/GhostImage";
 import {FooterProps} from "./footerprops";
 
 const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
@@ -34,32 +34,23 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
     "relative w-full h-36",
     classes?.logo,
   );
-  const linksClass = cx(
-    "footer-links",
-    "flex space-x-8",
-    classes?.links,
-  );
 
   return (
     <nav className={rootClass}>
       <div className={containerClass}>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="p-2">
-            <div className={logoClass}>
-              {Boolean(logoUrl) && (
-                <Image
-                  fill
-                  unoptimized
-                  alt="logo"
-                  src={logoUrl}
-                  draggable={false}
-                  loading="lazy"
-                  placeholder="blur"
-                  blurDataURL={thumbnailUrl}
-                  className="object-contain object-center lg:object-left"
-                />
-              )}
-            </div>
+            <GhostImage
+              className={logoClass}
+              layout="fill"
+              alt="logo"
+              src={logoUrl}
+              loading="lazy"
+              placeholder="blur"
+              blurDataURL={thumbnailUrl}
+              objectFit="contain"
+              objectPosition="center"
+            />
           </div>
           <div className="space-y-6">
             {addresses.map((item, index) => (
@@ -92,19 +83,17 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
             </div>
             {Boolean(photoUrl) && (
               <div className="lg:absolute w-full h-56 lg:h-[500px]">
-                <div className="relative w-full h-full">
-                  <Image
-                    fill
-                    unoptimized
-                    alt="photo"
-                    src={photoUrl}
-                    draggable={false}
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL={thumbnailUrl}
-                    className="object-contain object-top"
-                  />
-                </div>
+                <GhostImage
+                  className="relative w-full h-full"
+                  layout="fill"
+                  alt="photo"
+                  src={photoUrl}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL={thumbnailUrl}
+                  objectFit="contain"
+                  objectPosition="top"
+                />
               </div>
             )}
           </div>

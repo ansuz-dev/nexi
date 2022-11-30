@@ -1,10 +1,10 @@
 import React from "react";
 import cx from "classnames";
-import Image from "next/legacy/image";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import GhostImage from "../../items/images/GhostImage";
 import {GallerySectionProps} from "./gallerysectionprops";
 
 const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element => {
@@ -49,21 +49,17 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
 
             return (
               <SwiperSlide key={index}>
-                <div className="relative w-full h-80">
-                  <Image
-                    layout="fill"
-                    unoptimized
-                    alt="gallery item"
-                    src={photoUrl}
-                    draggable={false}
-                    unselectable="on"
-                    loading="lazy"
-                    placeholder="blur"
-                    blurDataURL={thumbnailUrl}
-                    objectFit="cover"
-                    objectPosition="center"
-                  />
-                </div>
+                <GhostImage
+                  className="relative w-full h-80"
+                  layout="fill"
+                  alt="gallery item"
+                  src={photoUrl}
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL={thumbnailUrl}
+                  objectFit="cover"
+                  objectPosition="center"
+                />
               </SwiperSlide>
             );
           })}
