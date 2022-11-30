@@ -47,12 +47,35 @@ const Home = (): JSX.Element => (
     <main>
 
       <div className="container mx-auto space-y-8 py-16">
-        <Button001
-          link
-          label="Click me"
-          href="/test"
-          type="outlined"
-        />
+        <div className="space-y-4">
+          <Button001
+            className="w-full"
+            label="Click me"
+            type="outlined"
+          />
+
+          <Button001
+            link
+            className="w-full"
+            label="Click me"
+            href="/test"
+            type="outlined"
+          />
+        </div>
+
+        <div className="space-x-4">
+          <Button001
+            label="Click me"
+            type="outlined"
+          />
+
+          <Button001
+            link
+            label="Click me"
+            href="/test"
+            type="outlined"
+          />
+        </div>
 
         <div className="space-y-4">
           <TextField001
