@@ -13,8 +13,8 @@ export interface InputProps {
   size?: InputSizes;
   error?: boolean;
   className?: string;
-  leftIcon?: JSX.Element,
-  rightIcon?: JSX.Element,
+  lefticon?: JSX.Element,
+  righticon?: JSX.Element,
 }
 
 export interface GlobalInputProps extends InputProps {

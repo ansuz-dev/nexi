@@ -57,18 +57,20 @@ const Home = (): JSX.Element => (
         <div className="space-y-4">
           <TextField001
             label="Field name"
-            leftIcon={<PhoneIcon className="fill-primary-600" />}
-            rightIcon={<PhoneIcon className="fill-primary-600" />}
+            lefticon={<PhoneIcon className="fill-primary-600" />}
+            righticon={<PhoneIcon className="fill-primary-600" />}
           />
 
           <TextField001
             color="secondary"
             label="Field name"
-            leftIcon={<PhoneIcon className="fill-secondary-600" />}
-            rightIcon={<PhoneIcon className="fill-secondary-600" />}
+            lefticon={<PhoneIcon className="fill-secondary-600" />}
+            righticon={<PhoneIcon className="fill-secondary-600" />}
           />
 
           <Select001
+            size="medium"
+            color="primary"
             options={[
               {value: "A", label: "A"},
               {value: "b", label: "b"},
