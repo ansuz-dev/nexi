@@ -4,6 +4,7 @@ export interface HeaderSectionData {
   background?: string;
   photos?: Array<unknown>;
   links?: Array<unknown>;
+  slides?: Array<unknown>;
 }
 
 export interface HeaderSectionClasses {
@@ -21,7 +22,8 @@ export interface HeaderSectionProps {
 
 export type HeaderSectionLayouts =
   "default"
-  | "hs001";
+  | "hs001"
+  | "hs002";
 
 export interface GlobalHeaderSectionData extends HeaderSectionData {
   layout?: HeaderSectionLayouts;

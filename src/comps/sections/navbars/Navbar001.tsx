@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
@@ -14,92 +14,165 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
   const logoUrl = getUrl(logo) as string;
   const thumbnailUrl = getFormatUrl(logo, "thumbnail") as string;
 
-  const rootClass = cx(
-    "nav001",
-    "py-3 bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
-    classes?.root,
-  );
-  const containerClass = cx(
-    "navbar-container",
-    "container flex justify-between items-center mx-auto",
-    classes?.container,
-  );
-  const logoClass = cx(
-    "navbar-logo",
-    "relative w-20 h-16",
-    classes?.logo,
-  );
-  const linksClass = cx(
-    "navbar-links",
-    "flex space-x-8",
-    classes?.links,
-  );
-  const rightLinksClass = cx(
-    "navbar-rightlinks",
-    "flex",
-    classes?.rightLinks,
-  );
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = useCallback(() => {
+    setIsOpen(v => !v);
+  }, []);
+
+  const closeMenu = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const {
+    rootClass,
+    containerClass,
+    logoClass,
+    linksClass,
+    rightLinksClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "nav001",
+      "bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
+      classes?.root,
+    ),
+    containerClass: cx(
+      "navbar-container",
+      "container flex justify-between items-center mx-auto py-3",
+      classes?.container,
+    ),
+    logoClass: cx(
+      "navbar-logo",
+      "relative w-20 h-14 md:h-16",
+      classes?.logo,
+    ),
+    linksClass: cx(
+      "navbar-links",
+      "hidden lg:flex space-x-8",
+      classes?.links,
+    ),
+    rightLinksClass: cx(
+      "navbar-rightlinks",
+      "hidden md:flex",
+      classes?.rightLinks,
+    ),
+  }), [classes]);
+
+  const menuClass = useMemo(() => cx(
+    "navbar-menu",
+    "lg:hidden bg-white w-full overflow-hidden transition-[max-height] duration-300 shadow-[inset_0_2px_2px_rgba(0,0,0,0.25)]",
+    {
+      "max-h-[1000px]": isOpen,
+      "max-h-0": !isOpen,
+    },
+  ), [isOpen]);
+
+  const navLinks = useMemo(() => Boolean(links) && (
+    <ul className={linksClass}>
+      {
+        links.map((item, index) => {
+          const link = getAttr(item, "link") as string;
+          const linkClass = cx(
+            "p-1 text-base leading-normal tracking-[0.5px]",
+            {"font-bold text-primary-500": link === active},
+          );
+
+          return (
+            <Link
+              key={index}
+              href={link}
+            >
+              <li className={linkClass}>
+                {getAttr(item, "title") as string}
+              </li>
+            </Link>
+          );
+        })
+      }
+    </ul>
+  ), [active, links, linksClass]);
+
+  const rightNavLinks = useMemo(() => Boolean(rightLinks) && (
+    <ul className={rightLinksClass}>
+      {
+        rightLinks.map((item, index) => (
+          <Button
+            key={index}
+            link
+            layout="btn001"
+            type="outlined"
+            label={getAttr(item, "title") as string}
+            href={getAttr(item, "link") as string}
+          />
+        ))
+      }
+    </ul>
+  ), [rightLinks, rightLinksClass]);
+
+  const menuLinks = useMemo(() => Boolean(links) && (
+    <ul>
+      {
+        links.map((item, index) => {
+          const link = getAttr(item, "link") as string;
+          const linkClass = cx(
+            "text-sm leading-normal tracking-[0.25px] p-4",
+            {"font-bold text-primary-500": link === active},
+          );
+
+          return (
+            <Link
+              key={index}
+              href={link}
+              onClick={closeMenu}
+            >
+              <li className={linkClass}>
+                {getAttr(item, "title") as string}
+              </li>
+            </Link>
+          );
+        })
+      }
+    </ul>
+  ), [active, closeMenu, links]);
 
   return (
     <nav className={rootClass}>
       <div className={containerClass}>
-        <Link href="/">
-          <GhostImage
-            className={logoClass}
-            priority
-            layout="fill"
-            alt="logo"
-            src={logoUrl}
-            placeholder="blur"
-            blurDataURL={thumbnailUrl}
-            objectFit="contain"
-            objectPosition="left center"
-          />
-        </Link>
-        {
-          Boolean(links) && (
-            <ul className={linksClass}>
-              {
-                links.map((item, index) => {
-                  const link = getAttr(item, "link") as string;
-                  const linkClass = cx(
-                    "p-1 text-base leading-normal tracking-[0.5px]",
-                    {"font-bold text-primary-500": link === active},
-                  );
-
-                  return (
-                    <Link
-                      key={index}
-                      href={link}
-                    >
-                      <li className={linkClass}>
-                        {getAttr(item, "title") as string}
-                      </li>
-                    </Link>
-                  );
-                })
-              }
-            </ul>
-          )
-        }
-        {
-          Boolean(rightLinks) && (
-            <ul className={rightLinksClass}>
-              {
-                rightLinks.map((item, index) => (
-                  <Button
-                    key={index}
-                    link
-                    layout="btn001"
-                    type="outlined"
-                    label={getAttr(item, "title") as string}
-                    href={getAttr(item, "link") as string}
-                  />
-                ))
-              }
-            </ul>
-          )
-        }
+        <div className="flex items-center space-x-4">
+          <div className="lg:hidden" onClick={toggleMenu}>
+            <svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                {
+                  isOpen ? (
+                    <path d="M7.46665 22.1667L5.83331 20.5334L12.3666 14L5.83331 7.46671L7.46665 5.83337L14 12.3667L20.5333 5.83337L22.1666 7.46671L15.6333 14L22.1666 20.5334L20.5333 22.1667L14 15.6334L7.46665 22.1667Z" />
+                  ) : (
+                    <path d="M3.5 21V18.6667H24.5V21H3.5ZM3.5 15.1667V12.8333H24.5V15.1667H3.5ZM3.5 9.33333V7H24.5V9.33333H3.5Z" />
+                  )
+                }
+              </g>
+            </svg>
+          </div>
+          <Link href="/">
+            <GhostImage
+              className={logoClass}
+              priority
+              layout="fill"
+              alt="logo"
+              src={logoUrl}
+              placeholder="blur"
+              blurDataURL={thumbnailUrl}
+              objectFit="contain"
+              objectPosition="left center"
+            />
+          </Link>
+        </div>
+        {navLinks}
+        {rightNavLinks}
+      </div>
+      <div className={menuClass}>
+        <div className="container mx-auto">
+          {menuLinks}
+        </div>
       </div>
     </nav>
   );

@@ -6,11 +6,13 @@ import TextField from "../comps/items/inputs/TextField";
 import Select from "../comps/items/inputs/Select";
 
 import Footer001 from "../comps/sections/footers/Footer001";
+import Navbar from "../comps/sections/navbars/Navbar";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
 import PhoneIcon from "../../assets/phone.svg";
+import HeaderSection from "../comps/sections/headers/HeaderSection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -22,12 +24,12 @@ const Home = (): JSX.Element => (
 
     <SEOItem />
 
-    {/* <Navbar001
-      active="/link-1"
+    <Navbar
+      active="/"
       data={{
         logo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
         links: [
-          {title: "Home", link: "/link-1"},
+          {title: "Home", link: "/"},
           {title: "Rénovation", link: "/link-2"},
           {title: "Dépannage", link: "/link-2"},
           {title: "Le groupe 24/7 HESTIA", link: "/link-2"},
@@ -37,9 +39,26 @@ const Home = (): JSX.Element => (
           {title: "01 83 64 12 15", link: "tel:01 83 64 12 15"},
         ],
       }}
-    /> */}
+    />
 
     <main>
+
+      <HeaderSection
+        data={{
+          layout: "hs002",
+          title: "Hello",
+          subtitle: "Lorem ipsum",
+          links: [
+            {title: "Go to me", link: "/me"},
+          ],
+          slides: [
+            {
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              videoLink: "https://www.youtube.com/embed/FituuEIzdtI",
+            },
+          ],
+        }}
+      />
 
       <div className="container mx-auto space-y-8 py-16">
         <div className="space-y-4">
