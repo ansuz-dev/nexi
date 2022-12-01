@@ -54,7 +54,7 @@ const Home = (): JSX.Element => (
           slides: [
             {
               photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
-              videoLink: "https://www.youtube.com/embed/FituuEIzdtI",
+              videoLink: "https://www.youtube.com/embed/nP4PRM7SRZE?autoplay=1&disablekb=1&loop=1&mute=1",
             },
           ],
         }}
