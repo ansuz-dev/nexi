@@ -2,52 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body {
+  font-family: "Roboto", sans-serif !important;
+}
+
 @layer base {
   h1 {
+    font-family: "Roboto Slab", serif !important;
     @apply text-8xl font-light leading-snug tracking-[-1.5px];
   }
 
   h2 {
+    font-family: "Roboto Slab", serif !important;
     @apply text-6xl font-light leading-snug tracking-[-0.5px];
   }
 
   h3 {
-    @apply text-5xl leading-snug;
+    font-family: "Roboto Slab", serif !important;
+    @apply text-5xl font-normal leading-snug;
   }
 
   h4 {
-    @apply text-4xl leading-snug tracking-[0.25px];
+    font-family: "Roboto Slab", serif !important;
+    @apply text-4xl font-normal leading-snug tracking-[0.25px];
   }
 
   h5 {
-    @apply text-2xl leading-normal;
+    font-family: "Roboto Slab", serif !important;
+    @apply text-2xl font-normal leading-normal;
   }
 
   h6 {
+    font-family: "Roboto Slab", serif !important;
     @apply text-xl font-medium leading-normal tracking-[0.15px];
   }
 
   .body1 {
-    @apply text-base leading-normal tracking-[0.5px];
+    @apply text-base font-normal leading-normal tracking-[0.5px];
   }
 
   .body2 {
-    @apply text-sm leading-normal tracking-[0.25px];
+    @apply text-sm font-normal leading-normal tracking-[0.25px];
   }
 
   .subtitle1 {
-    @apply text-base leading-normal font-bold tracking-[0.5px];
+    @apply text-base font-semibold leading-normal tracking-[0.5px];
   }
 
   .subtitle2 {
-    @apply text-sm leading-normal font-bold tracking-[0.1px];
+    @apply text-sm font-semibold leading-normal tracking-[0.1px];
   }
 
   .caption {
-    @apply text-xs md:text-sm;
+    @apply text-xs md:text-sm font-normal;
   }
 
   .title {
-    @apply text-base md:text-lg;
+    @apply text-base md:text-lg font-normal;
   }
 }

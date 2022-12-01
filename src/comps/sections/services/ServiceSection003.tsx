@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import ServiceCard003 from "../../cards/services/ServiceCard003";
@@ -11,32 +11,43 @@ const ServiceSection003 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   const services = getAttr(data, "services") as Array<unknown>;
   const links = getAttr(data, "links") as Array<unknown>;
 
-  const rootClass = cx(
-    "ss003",
-    "py-12",
-    {"bg-neutral-50": isGray(background)},
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container mx-auto space-y-8",
-    classes?.container,
-  );
-  const titleClass = cx(
-    "section-title",
-    "text-5xl leading-snug text-center",
-    classes?.title,
-  );
-  const listClass = cx(
-    "section-list",
-    "grid grid-cols-4 gap-4",
-    classes?.list,
-  );
-  const linksClass = cx(
-    "section-links",
-    "flex justify-center space-x-2",
-    classes?.links,
-  );
+  const {
+    rootClass,
+    containerClass,
+    titleClass,
+    listClass,
+    linksClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "ss003",
+      "py-12",
+      {"bg-neutral-50": isGray(background)},
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container mx-auto space-y-6 lg:space-y-8",
+      classes?.container,
+    ),
+    titleClass: cx(
+      "section-title",
+      "text-center",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.title,
+    ),
+    listClass: cx(
+      "section-list",
+      "grid md:grid-cols-2 lg:grid-cols-4 gap-4",
+      classes?.list,
+    ),
+    linksClass: cx(
+      "section-links",
+      "flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4",
+      classes?.links,
+    ),
+  }), [background, classes]);
 
   return (
     <section className={rootClass}>
@@ -55,8 +66,8 @@ const ServiceSection003 = ({data, classes}: ServiceSectionProps): JSX.Element =>
               <Button
                 key={index}
                 link
+                className="w-full md:w-auto"
                 type="outlined"
-                size="large"
                 href={getAttr(link, "link") as string}
                 label={getAttr(link, "title") as string}
               />
@@ -67,7 +78,5 @@ const ServiceSection003 = ({data, classes}: ServiceSectionProps): JSX.Element =>
     </section>
   );
 };
-
-ServiceSection003.propTypes = {};
 
 export default React.memo(ServiceSection003);

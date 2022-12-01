@@ -13,6 +13,10 @@ import "swiper/css/pagination";
 
 import PhoneIcon from "../../assets/phone.svg";
 import HeaderSection from "../comps/sections/headers/HeaderSection";
+import ServiceSection from "../comps/sections/services/ServiceSection";
+import StatsSection from "../comps/sections/stats/StatsSection";
+import PricingSection from "../comps/sections/pricings/PricingSection";
+import PreviewSection from "../comps/sections/previews/PreviewSection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -57,6 +61,124 @@ const Home = (): JSX.Element => (
               videoLink: "https://www.youtube.com/embed/nP4PRM7SRZE?autoplay=1&disablekb=1&loop=1&mute=1",
             },
           ],
+        }}
+      />
+
+      <ServiceSection
+        data={{
+          layout: "ss003",
+          title: "Service section",
+          subtitle: "Lorem ipsum",
+          background: "gray",
+          services: [
+            {
+              name: "Service 1",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-1",
+            },
+            {
+              name: "Service 2",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-2",
+            },
+            {
+              name: "Service 1",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-1",
+            },
+            {
+              name: "Service 2",
+              description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-2",
+            },
+          ],
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+        }}
+      />
+
+      <StatsSection
+        data={{
+          layout: "sts001",
+          title: "Stats section",
+          subtitle: "Lorem ipsum",
+          stats: [
+            {label: "Label 1", value: "10"},
+            {label: "Label 2", value: "10"},
+            {label: "Label 3", value: "10"},
+            {label: "Label 4", value: "10"},
+          ],
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+        }}
+      />
+
+      <PricingSection
+        data={{
+          layout: "ps001",
+          title: "Pricing section",
+          subtitle: "Lorem ipsum",
+          background: "gray",
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+          plans: [
+            {
+              title: "Plan 1",
+              price: "300",
+              unit: "euros",
+              plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
+              link: "/plan-1",
+              linkTitle: "Order me",
+            },
+            {
+              title: "Plan 1",
+              price: "300",
+              unit: "euros",
+              plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
+              recommended: "Best seller",
+              link: "/plan-1",
+              linkTitle: "Order me",
+            },
+            {
+              title: "Plan 1",
+              price: "300",
+              unit: "euros",
+              plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
+              link: "/plan-1",
+              linkTitle: "Order me",
+            },
+            {
+              title: "Plan 1",
+              price: "300",
+              unit: "euros",
+              plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
+              link: "/plan-1",
+              linkTitle: "Order me",
+            },
+          ],
+        }}
+      />
+
+      <PreviewSection
+        data={{
+          layout: "prs001",
+          title: "Preview section",
+          subtitle: "Lorem ipsum",
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+          document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
         }}
       />
 

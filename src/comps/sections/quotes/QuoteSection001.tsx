@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
@@ -14,26 +14,38 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
   const photoUrl = getUrl(photo) as string;
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
-  const rootClass = cx(
-    "qs001",
-    {"bg-neutral-50": isGray(background)},
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container mx-auto",
-    classes?.container,
-  );
-  const titleClass = cx(
-    "section-title",
-    "text-5xl leading-snug text-primary-600",
-    classes?.title,
-  );
-  const subtitleClass = cx(
-    "section-subtitle",
-    "text-5xl font-normal leading-snug",
-    classes?.subtitle,
-  );
+  const {
+    rootClass,
+    containerClass,
+    titleClass,
+    subtitleClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "qs001",
+      {"bg-neutral-50": isGray(background)},
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container mx-auto",
+      classes?.container,
+    ),
+    titleClass: cx(
+      "section-title",
+      "text-primary-600",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.title,
+    ),
+    subtitleClass: cx(
+      "section-subtitle",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.subtitle,
+    ),
+  }), [background, classes]);
 
   return (
     <section className={rootClass}>
@@ -49,10 +61,10 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
                 <div className="px-6">
                   {quotes.map((quote, index) => (
                     <div key={index} className="space-y-6">
-                      <p className="text-base leading-normal tracking-[0.5px]">
+                      <p className="text-base font-normal leading-normal tracking-[0.5px]">
                         “{getAttr(quote, "quote") as string}”
                       </p>
-                      <p className="text-base leading-normal font-bold tracking-[0.5px] text-right">
+                      <p className="text-base font-semibold leading-normal tracking-[0.5px] text-right">
                         - {getAttr(quote, "person") as string}
                       </p>
                     </div>
@@ -79,7 +91,5 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
     </section>
   );
 };
-
-QuoteSection001.propTypes = {};
 
 export default React.memo(QuoteSection001);

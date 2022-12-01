@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import ContactItem, {ContactItemProps} from "../../items/common/ContactItem";
@@ -19,21 +19,27 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
   const photo = getAttr(data, "photo");
   const photoUrl = getUrl(photo) as string;
 
-  const rootClass = cx(
-    "footer001",
-    "py-8 bg-neutral-100 overflow-hidden",
-    classes?.root,
-  );
-  const containerClass = cx(
-    "footer-container",
-    "container mx-auto space-y-8 text-center lg:text-left",
-    classes?.container,
-  );
-  const logoClass = cx(
-    "footer-logo",
-    "relative w-full h-36",
-    classes?.logo,
-  );
+  const {
+    rootClass,
+    containerClass,
+    logoClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "footer001",
+      "py-8 bg-neutral-100 overflow-hidden",
+      classes?.root,
+    ),
+    containerClass: cx(
+      "footer-container",
+      "container mx-auto space-y-8 text-center lg:text-left",
+      classes?.container,
+    ),
+    logoClass: cx(
+      "footer-logo",
+      "relative w-full h-36",
+      classes?.logo,
+    ),
+  }), [classes]);
 
   return (
     <nav className={rootClass}>
@@ -55,7 +61,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
           <div className="space-y-6">
             {addresses.map((item, index) => (
               <div key={index} className="space-y-2">
-                <label className="text-base leading-normal font-bold tracking-[0.5px]">
+                <label className="text-base font-semibold leading-normal tracking-[0.5px]">
                   {getAttr(item, "title") as string}
                 </label>
                 <p className="text-base leading-normal tracking-[0.5px] text-black-secondary">
@@ -65,7 +71,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
             ))}
           </div>
           <div className="space-y-2">
-            <label className="text-base leading-normal font-bold tracking-[0.5px]">
+            <label className="text-base font-semibold leading-normal tracking-[0.5px]">
               Contacts
             </label>
             {contacts.map((item, index) => (
@@ -74,7 +80,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
           </div>
           <div className="relative space-y-4">
             <div className="space-y-2">
-              <label className="text-base leading-normal font-bold tracking-[0.5px]">
+              <label className="text-base font-semibold leading-normal tracking-[0.5px]">
                 Social links
               </label>
               <div>
@@ -107,7 +113,5 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
     </nav>
   );
 };
-
-Footer001.propTypes = {};
 
 export default React.memo(Footer001);

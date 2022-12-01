@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
@@ -11,17 +11,22 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
   const background = getAttr(data, "background") as string;
   const photos = getAttr(data, "photos", "data") as Array<unknown>;
 
-  const rootClass = cx(
-    "gs001",
-    "py-12",
-    {"bg-neutral-50": isGray(background)},
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container mx-auto",
-    classes?.container,
-  );
+  const {
+    rootClass,
+    containerClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "gs001",
+      "py-12",
+      {"bg-neutral-50": isGray(background)},
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container mx-auto",
+      classes?.container,
+    ),
+  }), [background, classes]);
 
   return (
     <section className={rootClass}>
@@ -29,7 +34,6 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
         <Swiper
           style={{paddingBottom: 50}}
           loop
-          speed={1000}
           spaceBetween={4}
           slidesPerView={1}
           pagination={{clickable: true}}
@@ -69,7 +73,5 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
     </section>
   );
 };
-
-GallerySection001.propTypes = {};
 
 export default React.memo(GallerySection001);

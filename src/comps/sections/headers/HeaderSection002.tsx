@@ -30,7 +30,10 @@ const HeaderSection002 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     ),
     titleClass: cx(
       "section-title",
-      "text-5xl leading-snug text-center text-white",
+      "text-center",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
       classes?.title,
     ),
     subtitleClass: cx(
@@ -78,7 +81,5 @@ const HeaderSection002 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     </section>
   );
 };
-
-HeaderSection002.propTypes = {};
 
 export default React.memo(HeaderSection002);

@@ -15,7 +15,7 @@ const ServiceCard003 = ({service, classes}: ServiceCardProps): JSX.Element => {
 
   const rootClass = cx(
     "servicecard003",
-    "p-6 space-y-2",
+    "flex flex-col items-center md:items-start p-3 md:p-4 space-y-2",
     classes?.root,
   );
   const photoClass = cx(
@@ -25,17 +25,20 @@ const ServiceCard003 = ({service, classes}: ServiceCardProps): JSX.Element => {
   );
   const contentClass = cx(
     "sc-content",
-    "space-y-2",
+    "space-y-2 text-center md:text-left",
     classes?.content,
   );
   const nameClass = cx(
     "sc-name",
-    "text-xl font-medium leading-normal tracking-[0.15px]",
+    "text-base font-semibold leading-normal tracking-[0.5px]",
+    "md:text-xl md:font-medium md:leading-normal md:tracking-[0.15px]",
     classes?.name,
   );
   const descriptionClass = cx(
     "sc-description",
-    "text-base leading-normal tracking-[0.5px] line-clamp-5",
+    "text-black-secondary line-clamp-5",
+    "text-sm font-normal leading-normal tracking-[0.25px]",
+    "md:text-base md:leading-normal md:tracking-[0.5px]",
     classes?.description,
   );
 

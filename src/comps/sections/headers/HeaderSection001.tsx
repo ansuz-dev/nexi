@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
@@ -14,31 +14,42 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const photoUrl = getUrl(photo) as string;
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
-  const rootClass = cx(
-    "hs001",
-    "relative py-40",
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container text-center",
-    classes?.container,
-  );
-  const titleClass = cx(
-    "section-title",
-    "text-5xl leading-snug text-center text-white",
-    classes?.title,
-  );
-  const subtitleClass = cx(
-    "section-subtitle",
-    "text-xl font-medium leading-normal tracking-[0.15px] text-white",
-    classes?.subtitle,
-  );
-  const linksClass = cx(
-    "section-links",
-    "flex justify-center space-x-2",
-    classes?.links,
-  );
+  const {
+    rootClass,
+    containerClass,
+    titleClass,
+    subtitleClass,
+    linksClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "hs001",
+      "relative py-40",
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container text-center",
+      classes?.container,
+    ),
+    titleClass: cx(
+      "section-title",
+      "text-center",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.title,
+    ),
+    subtitleClass: cx(
+      "section-subtitle",
+      "text-xl font-medium leading-normal tracking-[0.15px] text-white",
+      classes?.subtitle,
+    ),
+    linksClass: cx(
+      "section-links",
+      "flex justify-center space-x-2",
+      classes?.links,
+    ),
+  }), [classes]);
 
   return (
     <section className={rootClass}>
@@ -83,7 +94,5 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     </section>
   );
 };
-
-HeaderSection001.propTypes = {};
 
 export default React.memo(HeaderSection001);

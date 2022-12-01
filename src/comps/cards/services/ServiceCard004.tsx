@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
@@ -16,26 +16,33 @@ const ServiceCard004 = ({service, classes}: ServiceCardProps): JSX.Element => {
   }
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
-  const rootClass = cx(
-    "servicecard004",
-    "bg-white rounded-md overflow-hidden px-2 py-4 md:py-6 space-y-4",
-    "hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
-    classes?.root,
-  );
-  const photoClass = cx(
-    "sc-photo",
-    "relative h-32",
-    classes?.photo,
-  );
-  const contentClass = cx(
-    "sc-content",
-    classes?.content,
-  );
-  const nameClass = cx(
-    "sc-name",
-    "text-base leading-normal tracking-[0.5px] text-center",
-    classes?.name,
-  );
+  const {
+    rootClass,
+    photoClass,
+    contentClass,
+    nameClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "servicecard004",
+      "bg-white rounded-md overflow-hidden p-3 md:py-4 space-y-4",
+      "hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
+      classes?.root,
+    ),
+    photoClass: cx(
+      "sc-photo",
+      "relative h-32",
+      classes?.photo,
+    ),
+    contentClass: cx(
+      "sc-content",
+      classes?.content,
+    ),
+    nameClass: cx(
+      "sc-name",
+      "text-base font-medium leading-normal tracking-[0.5px] text-center",
+      classes?.name,
+    ),
+  }), [classes]);
 
   return (
     <Link href={link}>

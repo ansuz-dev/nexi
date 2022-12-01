@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 
 import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
@@ -17,22 +17,31 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
   const background = getAttr(data, "background") as string;
   const photos = getAttr(data, "photos", "data") as Array<unknown>;
 
-  const rootClass = cx(
-    "gs002",
-    "py-12",
-    {"bg-neutral-50": isGray(background)},
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container mx-auto space-y-8",
-    classes?.container,
-  );
-  const titleClass = cx(
-    "section-title",
-    "text-5xl leading-snug text-center",
-    classes?.title,
-  );
+  const {
+    rootClass,
+    containerClass,
+    titleClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "gs002",
+      "py-12",
+      {"bg-neutral-50": isGray(background)},
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container mx-auto space-y-8",
+      classes?.container,
+    ),
+    titleClass: cx(
+      "section-title",
+      "text-center",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.title,
+    ),
+  }), [background, classes]);
 
   return (
     <section className={rootClass}>
@@ -70,7 +79,5 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
     </section>
   );
 };
-
-GallerySection002.propTypes = {};
 
 export default React.memo(GallerySection002);

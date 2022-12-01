@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr} from "../../../utils";
 import Button from "../../items/buttons/Button";
@@ -16,30 +16,38 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
 
   const list = plan?.split("\n") ?? [];
 
-  const rootClass = cx(
-    "pricingcard001",
-    classes?.root,
-  );
-  const contentClass = cx(
-    "pc-content",
-    "bg-white px-6 py-16 space-y-6 border border-neutral-100",
-    classes?.content,
-  );
-  const titleClass = cx(
-    "pc-title",
-    "text-xl font-medium leading-normal tracking-[0.15px]",
-    classes?.title,
-  );
-  const priceClass = cx(
-    "pc-price",
-    "text-4xl leading-snug tracking-[0.25px] text-secondary-600",
-    classes?.price,
-  );
-  const unitClass = cx(
-    "pc-unit",
-    "text-sm leading-normal font-bold tracking-[0.1px]",
-    classes?.price,
-  );
+  const {
+    rootClass,
+    contentClass,
+    titleClass,
+    priceClass,
+    unitClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "pricingcard001",
+      classes?.root,
+    ),
+    contentClass: cx(
+      "pc-content",
+      "bg-white px-4 xl:px-6 py-14 lg:py-16 space-y-6 border border-neutral-100",
+      classes?.content,
+    ),
+    titleClass: cx(
+      "pc-title",
+      "text-xl font-medium leading-normal tracking-[0.15px]",
+      classes?.title,
+    ),
+    priceClass: cx(
+      "pc-price",
+      "text-4xl leading-snug tracking-[0.25px] text-secondary-600",
+      classes?.price,
+    ),
+    unitClass: cx(
+      "pc-unit",
+      "text-sm font-semibold leading-normal tracking-[0.1px]",
+      classes?.price,
+    ),
+  }), [classes]);
 
   return (
     <div className={rootClass}>

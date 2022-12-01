@@ -74,7 +74,7 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
           const link = getAttr(item, "link") as string;
           const linkClass = cx(
             "p-1 text-base leading-normal tracking-[0.5px]",
-            {"font-bold text-primary-500": link === active},
+            {"font-semibold text-primary-500": link === active},
           );
 
           return (
@@ -116,7 +116,7 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
           const link = getAttr(item, "link") as string;
           const linkClass = cx(
             "text-sm leading-normal tracking-[0.25px] p-4",
-            {"font-bold text-primary-500": link === active},
+            {"font-semibold text-primary-500": link === active},
           );
 
           return (
@@ -177,7 +177,5 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
     </nav>
   );
 };
-
-Navbar001.propTypes = {};
 
 export default React.memo(Navbar001);

@@ -24,7 +24,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   );
   const photoClass = cx(
     "sc-photo",
-    "relative h-52",
+    "relative h-40 lg:h-52",
     classes?.photo,
   );
   const contentClass = cx(
@@ -34,7 +34,9 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   );
   const nameClass = cx(
     "sc-name",
-    "text-4xl leading-snug tracking-[0.25px] text-center",
+    "text-primary-600 text-center",
+    "text-xl font-medium leading-normal tracking-[0.15px]",
+    "lg:text-4xl lg:font-normal lg:leading-snug lg:tracking-[0.25px]",
     classes?.name,
   );
 
@@ -44,7 +46,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
         <div className={contentClass}>
           <h4 className={nameClass}>{name}</h4>
         </div>
-        <div className="p-14">
+        <div className="p-10 lg:p-14">
           <GhostImage
             className={photoClass}
             layout="fill"

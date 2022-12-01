@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from "react";
+import React, {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import cx from "classnames";
 import {Document, Page, pdfjs} from "react-pdf";
 
@@ -8,8 +8,8 @@ import {PreviewSectionProps} from "./previewsectionprops";
 pdfjs.GlobalWorkerOptions.workerSrc
 = `//unpkg.com/pdfjs-dist@${pdfjs.version}/legacy/build/pdf.worker.min.js`;
 
-const defaultWidth = 300;
-const marginWidth = 40;
+const defaultWidth = 640;
+const marginWidth = 20;
 
 const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
@@ -29,40 +29,52 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
     setNumPages(pdf.numPages);
   }, []);
 
-  const rootClass = cx(
-    "prs001",
-    "py-12",
-    {"bg-neutral-50": isGray(background)},
-    classes?.root,
-  );
-  const containerClass = cx(
-    "section-container",
-    "container mx-auto space-y-6",
-    classes?.container,
-  );
-  const titleClass = cx(
-    "section-title",
-    "text-5xl leading-snug text-center",
-    classes?.title,
-  );
-  const subtitleClass = cx(
-    "section-subtitle",
-    "text-base leading-normal tracking-[0.5px] text-center",
-    classes?.subtitle,
-  );
-  const documentClass = cx(
-    "section-document",
-    "flex flex-col items-center bg-neutral-50 py-6 space-y-4",
-    classes?.document,
-  );
+  const {
+    rootClass,
+    containerClass,
+    titleClass,
+    subtitleClass,
+    documentClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "prs001",
+      "py-12",
+      {"bg-neutral-50": isGray(background)},
+      classes?.root,
+    ),
+    containerClass: cx(
+      "section-container",
+      "container mx-auto space-y-6",
+      classes?.container,
+    ),
+    titleClass: cx(
+      "section-title",
+      "text-center",
+      "text-2xl font-normal leading-normal",
+      "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
+      "lg:text-5xl lg:font-normal lg:leading-snug",
+      classes?.title,
+    ),
+    subtitleClass: cx(
+      "section-subtitle",
+      "text-base font-normal leading-normal tracking-[0.5px] text-center",
+      classes?.subtitle,
+    ),
+    documentClass: cx(
+      "section-document",
+      "flex flex-col items-center bg-neutral-50 md:py-6 space-y-4",
+      classes?.document,
+    ),
+  }), [background, classes]);
 
   useEffect(() => {
-    setPdfWidth((pdfRef.current?.getBoundingClientRect()?.width ?? defaultWidth) - marginWidth);
-
     const onResize = () => {
-      setPdfWidth((pdfRef.current?.getBoundingClientRect()?.width ?? defaultWidth) - marginWidth);
+      const width = pdfRef.current?.getBoundingClientRect()?.width ?? defaultWidth;
+      const margin = width > defaultWidth ? marginWidth : 0;
+      setPdfWidth(width - margin);
     };
 
+    onResize();
     window.addEventListener("resize", onResize);
 
     return () => {
@@ -108,7 +120,5 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
     </section>
   );
 };
-
-PreviewSection001.propTypes = {};
 
 export default React.memo(PreviewSection001);
