@@ -27,7 +27,7 @@ export function getLayout<P>(comps: Layouts<P>, layout?:string): ComponentType<P
 export const getAttr = (obj: unknown, ...attrs: Array<string | number>): unknown => {
   const val = attrs.reduce(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (previousValue:any, attr: string) => (
+    (previousValue:any, attr: string | number) => (
       previousValue?.data?.attributes?.[attr]
       || previousValue?.data?.[attr]
       || previousValue?.attributes?.[attr]
