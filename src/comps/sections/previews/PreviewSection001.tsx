@@ -38,7 +38,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   } = useMemo(() => ({
     rootClass: cx(
       "prs001",
-      "py-12",
+      "py-8 md:py-12",
       {"bg-neutral-50": isGray(background)},
       classes?.root,
     ),

@@ -32,7 +32,7 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
     ),
     titleClass: cx(
       "section-title",
-      "text-primary-600",
+      "text-primary-600 text-center lg:text-left",
       "text-2xl font-normal leading-normal",
       "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
       "lg:text-5xl lg:font-normal lg:leading-snug",
@@ -40,6 +40,7 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
     ),
     subtitleClass: cx(
       "section-subtitle",
+      "text-center lg:text-left",
       "text-2xl font-normal leading-normal",
       "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
       "lg:text-5xl lg:font-normal lg:leading-snug",
@@ -51,8 +52,8 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
     <section className={rootClass}>
       <div className={containerClass}>
         <div className="grid lg:grid-cols-12 lg:gap-6">
-          <div className="col-start-2 col-span-7">
-            <div className="py-8 md:py-20 lg:py-28 space-y-6">
+          <div className="lg:col-start-2 lg:col-span-7">
+            <div className="py-8 lg:py-16 xl:py-24 space-y-6">
               <div>
                 <h3 className={titleClass}>{title}</h3>
                 <h6 className={subtitleClass}>{subtitle}</h6>

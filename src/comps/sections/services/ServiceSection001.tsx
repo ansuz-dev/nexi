@@ -17,7 +17,7 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   } = useMemo(() => ({
     rootClass: cx(
       "ss001",
-      "py-12",
+      "py-8 md:py-12",
       {"bg-neutral-50": isGray(background)},
       classes?.root,
     ),

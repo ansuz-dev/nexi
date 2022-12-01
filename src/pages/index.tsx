@@ -17,6 +17,7 @@ import ServiceSection from "../comps/sections/services/ServiceSection";
 import StatsSection from "../comps/sections/stats/StatsSection";
 import PricingSection from "../comps/sections/pricings/PricingSection";
 import PreviewSection from "../comps/sections/previews/PreviewSection";
+import QuoteSection from "../comps/sections/quotes/QuoteSection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -66,7 +67,7 @@ const Home = (): JSX.Element => (
 
       <ServiceSection
         data={{
-          layout: "ss003",
+          layout: "ss001",
           title: "Service section",
           subtitle: "Lorem ipsum",
           background: "gray",
@@ -179,6 +180,25 @@ const Home = (): JSX.Element => (
             {title: "Link 2", link: "/link-2"},
           ],
           document: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/sample_b76d581c36.pdf"}}},
+        }}
+      />
+
+      <QuoteSection
+        data={{
+          layout: "qs001",
+          title: "Quote section",
+          subtitle: "Lorem ipsum",
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+          quotes: [
+            {
+              quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              person: "John Doe",
+            },
+          ],
+          photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
         }}
       />
 

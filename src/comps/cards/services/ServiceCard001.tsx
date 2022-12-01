@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
@@ -15,31 +15,42 @@ const ServiceCard001 = ({service, classes}: ServiceCardProps): JSX.Element => {
   }
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
-  const rootClass = cx(
-    "servicecard001",
-    "border-2 border-neutral-100 rounded-md overflow-hidden bg-white hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
-    classes?.root,
-  );
-  const photoClass = cx(
-    "sc-photo",
-    "relative h-60",
-    classes?.photo,
-  );
-  const contentClass = cx(
-    "sc-content",
-    "p-6 space-y-2",
-    classes?.content,
-  );
-  const nameClass = cx(
-    "sc-name",
-    "text-2xl leading-normal",
-    classes?.name,
-  );
-  const descriptionClass = cx(
-    "sc-description",
-    "text-base leading-normal tracking-[0.5px] text-gray-500",
-    classes?.description,
-  );
+  const {
+    rootClass,
+    photoClass,
+    contentClass,
+    nameClass,
+    descriptionClass,
+  } = useMemo(() => ({
+    rootClass: cx(
+      "servicecard001",
+      "border-2 border-neutral-100 rounded-md overflow-hidden bg-white hover:drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
+      classes?.root,
+    ),
+    photoClass: cx(
+      "sc-photo",
+      "relative h-44 md:h-60",
+      classes?.photo,
+    ),
+    contentClass: cx(
+      "sc-content",
+      "p-4 md:p-6 space-y-2",
+      classes?.content,
+    ),
+    nameClass: cx(
+      "sc-name",
+      "text-xl font-medium leading-normal tracking-[0.15px]",
+      "md:text-2xl md:font-normal md:leading-normal",
+      classes?.name,
+    ),
+    descriptionClass: cx(
+      "sc-description",
+      "text-black-secondary",
+      "text-sm font-normal leading-normal tracking-[0.25px]",
+      "md:text-base md:leading-normal md:tracking-[0.5px]",
+      classes?.description,
+    ),
+  }), [classes]);
 
   return (
     <div className={rootClass}>

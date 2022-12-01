@@ -24,7 +24,7 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
   } = useMemo(() => ({
     rootClass: cx(
       "ps001",
-      "py-12",
+      "py-8 md:py-12",
       {"bg-neutral-50": isGray(background)},
       classes?.root,
     ),
