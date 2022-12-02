@@ -117,14 +117,14 @@ const Home = (): JSX.Element => (
 
       <StatsSection
         data={{
-          layout: "sts001",
+          layout: "sts002",
           title: "Stats section",
           subtitle: "Lorem ipsum",
           stats: [
-            {label: "Label 1", value: "10"},
-            {label: "Label 2", value: "10"},
-            {label: "Label 3", value: "10"},
-            {label: "Label 4", value: "10"},
+            {label: "Label 1", value: "10", background: "#122334"},
+            {label: "Label 2", value: "10", background: "#342352"},
+            {label: "Label 3", value: "10", background: "#124123"},
+            {label: "Label 4", value: "10", background: "#989234"},
           ],
           links: [
             {title: "Link 1", link: "/link-1"},

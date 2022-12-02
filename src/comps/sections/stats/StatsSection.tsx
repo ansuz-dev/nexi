@@ -6,6 +6,7 @@ import {GlobalStatsSectionProps} from "./statssectionprops";
 const comps = {
   "default": dynamic(() => import("./StatsSection001"), {suspense: true}),
   "sts001": dynamic(() => import("./StatsSection001"), {suspense: true}),
+  "sts002": dynamic(() => import("./StatsSection002"), {suspense: true}),
 };
 
 const StatsSection = (props: GlobalStatsSectionProps) : JSX.Element => {

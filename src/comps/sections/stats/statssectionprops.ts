@@ -22,7 +22,8 @@ export interface StatsSectionProps {
 
 export type StatsSectionLayouts =
   "default"
-  | "sts001";
+  | "sts001"
+  | "sts002";
 
 export interface GlobalStatsSectionData extends StatsSectionData {
   layout?: StatsSectionLayouts;
