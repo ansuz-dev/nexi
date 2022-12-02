@@ -72,8 +72,8 @@ const HeaderSection003 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   return (
     <section className={rootClass}>
       <div className={containerClass}>
-        <div className="grid grid-cols-12 gap-6">
-          <div className="col-start-4 col-span-6 space-y-8">
+        <div className="grid lg:grid-cols-12 gap-6">
+          <div className="lg:col-start-3 lg:col-span-8 space-y-8">
             <div className="space-y-6">
               <h3 className={titleClass}>{title}</h3>
               <h6 className={subtitleClass}>{subtitle}</h6>

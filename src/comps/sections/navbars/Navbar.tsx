@@ -6,6 +6,7 @@ import {GlobalNavbarProps} from "./navbarprops";
 const comps = {
   "default": dynamic(() => import("./Navbar001"), {suspense: true}),
   "nav001": dynamic(() => import("./Navbar001"), {suspense: true}),
+  "nav002": dynamic(() => import("./Navbar002"), {suspense: true}),
 };
 
 const Navbar = (props: GlobalNavbarProps) : JSX.Element => {

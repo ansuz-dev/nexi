@@ -6,7 +6,7 @@ import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
 import {NavbarProps} from "./navbarprops";
 
-const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
+const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
   const links = getAttr(data, "links") as Array<unknown>;
   const rightLinks = getAttr(data, "rightLinks") as Array<unknown>;
 
@@ -32,18 +32,18 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
     rightLinksClass,
   } = useMemo(() => ({
     rootClass: cx(
-      "nav001",
+      "nav002",
       "bg-white shadow-[0_4px_4px_rgba(0,0,0,0.25)]",
       classes?.root,
     ),
     containerClass: cx(
       "navbar-container",
-      "container flex justify-between items-center mx-auto py-3",
+      "container flex justify-between items-center mx-auto py-2",
       classes?.container,
     ),
     logoClass: cx(
       "navbar-logo",
-      "relative w-20 h-14 md:h-16",
+      "relative w-20 h-16 md:h-20",
       classes?.logo,
     ),
     linksClass: cx(
@@ -178,4 +178,4 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
   );
 };
 
-export default React.memo(Navbar001);
+export default React.memo(Navbar002);

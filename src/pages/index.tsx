@@ -33,6 +33,7 @@ const Home = (): JSX.Element => (
     <Navbar
       active="/"
       data={{
+        layout: "nav002",
         logo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
         links: [
           {title: "Home", link: "/"},
@@ -51,7 +52,7 @@ const Home = (): JSX.Element => (
 
       <HeaderSection
         data={{
-          layout: "hs003",
+          layout: "hs002",
           title: "Header section",
           subtitle: "Lorem ipsum",
           links: [

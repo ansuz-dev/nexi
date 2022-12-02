@@ -20,7 +20,8 @@ export interface NavbarProps {
 
 export type NavbarLayouts =
   "default"
-  | "nav001";
+  | "nav001"
+  | "nav002";
 
 export interface GlobalNavbarData extends NavbarData {
   layout?: NavbarLayouts;

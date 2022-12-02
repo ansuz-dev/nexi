@@ -79,7 +79,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
           height={size.height}
           className="absolute"
           frameBorder="0"
-          allow="autoplay; fullscreen"
+          allow="autoplay; fullscreen; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           onLoad={handleLoadIframe}
         />
