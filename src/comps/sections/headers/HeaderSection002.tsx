@@ -30,7 +30,7 @@ const HeaderSection002 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     ),
     titleClass: cx(
       "section-title",
-      "text-center",
+      "text-center text-white",
       "text-2xl font-normal leading-normal",
       "md:text-4xl md:font-normal md:leading-snug md:tracking-[0.25px]",
       "lg:text-5xl lg:font-normal lg:leading-snug",

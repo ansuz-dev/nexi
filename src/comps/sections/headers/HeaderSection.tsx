@@ -7,6 +7,7 @@ const comps = {
   "default": dynamic(() => import("./HeaderSection001"), {suspense: true}),
   "hs001": dynamic(() => import("./HeaderSection001"), {suspense: true}),
   "hs002": dynamic(() => import("./HeaderSection002"), {suspense: true}),
+  "hs003": dynamic(() => import("./HeaderSection003"), {suspense: true}),
 };
 
 const HeaderSection = (props: GlobalHeaderSectionProps) : JSX.Element => {

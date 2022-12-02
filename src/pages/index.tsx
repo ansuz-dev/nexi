@@ -10,6 +10,7 @@ import Navbar from "../comps/sections/navbars/Navbar";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 import PhoneIcon from "../../assets/phone.svg";
 import HeaderSection from "../comps/sections/headers/HeaderSection";
@@ -50,16 +51,25 @@ const Home = (): JSX.Element => (
 
       <HeaderSection
         data={{
-          layout: "hs002",
-          title: "Hello",
+          layout: "hs003",
+          title: "Header section",
           subtitle: "Lorem ipsum",
           links: [
-            {title: "Go to me", link: "/me"},
+            {title: "Go to test", link: "/test"},
           ],
           slides: [
             {
-              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1669840528318-487ea0f70f04"}}},
               videoLink: "https://www.youtube.com/embed/nP4PRM7SRZE?autoplay=1&disablekb=1&loop=1&mute=1",
+              duration: 8,
+            },
+            {
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1669907827996-f4bd504dfc34"}}},
+              duration: 5,
+            },
+            {
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c"}}},
+              duration: 5,
             },
           ],
         }}

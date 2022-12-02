@@ -1,17 +1,22 @@
-import React, {useMemo} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import cx from "classnames";
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {Swiper, SwiperSlide} from "swiper/react";
+import SwiperClass, {EffectFade} from "swiper";
+import {getAttr, stepperLoop} from "../../../utils";
 import Button from "../../items/buttons/Button";
-import GhostImage from "../../items/images/GhostImage";
+import SlideItem, {SlideItemProps} from "../../items/common/SlideItem";
 import {HeaderSectionProps} from "./headersectionprops";
 
-const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
+const defaultDuration = 3;
+const secondTicks = 1000;
+const transitionTime = 300;
+
+const HeaderSection003 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
   const subtitle = getAttr(data, "subtitle") as string;
   const links = getAttr(data, "links") as Array<unknown> | undefined;
-  const photo = getAttr(data, "slides", 0, "photo");
-  const photoUrl = getUrl(photo) as string;
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const slides = getAttr(data, "slides") as Array<SlideItemProps> | undefined;
+  const [swiper, setSwiper] = useState<SwiperClass>();
 
   const {
     rootClass,
@@ -21,7 +26,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     linksClass,
   } = useMemo(() => ({
     rootClass: cx(
-      "hs001",
+      "hs003",
       "relative py-40",
       classes?.root,
     ),
@@ -50,6 +55,20 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
     ),
   }), [classes]);
 
+  useEffect(() => {
+    if (swiper && !swiper.destroyed) {
+      const durations = slides?.map(slide => (
+        Number(slide.duration) || defaultDuration) * secondTicks) ?? [];
+      const state = stepperLoop(durations, () => {
+        swiper.slideNext(transitionTime, false);
+      });
+
+      return () => {
+        state.status = "stopped";
+      };
+    }
+  }, [slides, swiper]);
+
   return (
     <section className={rootClass}>
       <div className={containerClass}>
@@ -74,17 +93,22 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
         </div>
       </div>
       <div className="absolute top-0 left-0 w-full h-full -z-20">
-        <GhostImage
-          className="relative w-full h-full"
-          layout="fill"
-          priority
-          alt={title}
-          src={photoUrl}
-          placeholder="blur"
-          blurDataURL={thumbnailUrl}
-          objectFit="cover"
-          objectPosition="center"
-        />
+        <Swiper
+          loop
+          spaceBetween={0}
+          slidesPerView={1}
+          effect="fade"
+          modules={[EffectFade]}
+          onSwiper={setSwiper}
+          className="w-full h-full"
+        >
+          {slides?.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <SlideItem {...slide} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
       </div>
       <div
         className="absolute top-0 left-0 w-full h-full -z-10"
@@ -94,4 +118,4 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   );
 };
 
-export default React.memo(HeaderSection001);
+export default React.memo(HeaderSection003);

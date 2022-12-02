@@ -23,7 +23,8 @@ export interface HeaderSectionProps {
 export type HeaderSectionLayouts =
   "default"
   | "hs001"
-  | "hs002";
+  | "hs002"
+  | "hs003";
 
 export interface GlobalHeaderSectionData extends HeaderSectionData {
   layout?: HeaderSectionLayouts;

@@ -6,15 +6,13 @@ export interface SlideItemProps {
   photo?: unknown;
   videoLink?: string;
   duration?: number;
-  onFinish?: () => void;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-magic-numbers
 const ratio = 16 / 9;
-const secondTicks = 1000;
 
 const SlideItem = (props: SlideItemProps): JSX.Element => {
-  const {photo, videoLink, duration, onFinish} = props;
+  const {photo, videoLink} = props;
   const photoUrl = getUrl(photo) as string;
   const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
 
@@ -49,16 +47,6 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
       window.removeEventListener("resize", updateSize);
     };
   }, []);
-
-  useEffect(() => {
-    if (duration && duration > 0) {
-      const timer = setTimeout(() => {
-        if (onFinish) onFinish();
-      }, duration * secondTicks);
-
-      return () => clearTimeout(timer);
-    }
-  }, [duration, onFinish]);
 
   const handleLoadIframe = useCallback(() => {
     setIframeLoaded(true);
@@ -104,7 +92,6 @@ SlideItem.defaultProps = {
   photo: null,
   videoLink: null,
   duration: 0,
-  onFinish: undefined,
 };
 
 export default SlideItem;

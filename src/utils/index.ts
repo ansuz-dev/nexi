@@ -96,3 +96,48 @@ export const isGray = (background: string): boolean => {
 
   return Boolean(background.trim().match(/^(grey|gray)$/ui));
 };
+
+export function sleepAsync(duration: number): Promise<void> {
+  return new Promise(resolve => {
+    const timer = setTimeout(() => {
+      clearTimeout(timer);
+      resolve();
+    }, duration);
+  });
+}
+
+export interface LoopState {
+  index: number;
+  status: "running" | "stopped";
+  durations: Array<number>;
+  callback: (index: number) => void,
+}
+
+async function runLoop(state: LoopState) {
+  await sleepAsync(state.durations[state.index]);
+
+  if (state.status === "running") {
+    state.index++;
+    if (state.index >= state.durations.length) state.index = 0;
+
+    setTimeout(() => state.callback(state.index), 0);
+
+    await runLoop(state);
+  }
+}
+
+export function stepperLoop(
+  durations: Array<number>,
+  callback: (index: number) => void,
+): LoopState {
+  const state: LoopState = {
+    index: 0,
+    status: "running",
+    durations,
+    callback,
+  };
+
+  runLoop(state).catch(err => console.log(err));
+
+  return state;
+}
