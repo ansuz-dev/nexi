@@ -57,7 +57,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
       ref={containerRef}
       className="relative w-full h-full flex justify-center items-center overflow-hidden"
     >
-      {!iframeLoaded && (
+      {!iframeLoaded && Boolean(photoUrl) && (
         <Image
           src={photoUrl}
           alt="slide photo"
