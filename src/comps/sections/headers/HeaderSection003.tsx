@@ -7,7 +7,7 @@ import Button from "../../items/buttons/Button";
 import SlideItem, {SlideItemProps} from "../../items/common/SlideItem";
 import {HeaderSectionProps} from "./headersectionprops";
 
-const defaultDuration = 3;
+const defaultDuration = 5;
 const secondTicks = 1000;
 const transitionTime = 300;
 

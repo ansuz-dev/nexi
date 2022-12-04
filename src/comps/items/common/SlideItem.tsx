@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import Image from "next/legacy/image";
+import {useSwiperSlide} from "swiper/react";
 import {getFormatUrl, getUrl} from "../../../utils";
 
 export interface SlideItemProps {
@@ -21,6 +22,8 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const {isActive} = useSwiperSlide();
 
   useEffect(() => {
     const updateSize = () => {
@@ -57,7 +60,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
       ref={containerRef}
       className="relative w-full h-full flex justify-center items-center overflow-hidden"
     >
-      {!iframeLoaded && Boolean(photoUrl) && (
+      {(!iframeLoaded || !isActive) && Boolean(photoUrl) && (
         <Image
           src={photoUrl}
           alt="slide photo"
@@ -71,7 +74,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
           draggable={false}
         />
       )}
-      {Boolean(videoLink) && (
+      {Boolean(videoLink) && isActive && (
         <iframe
           ref={iframeRef}
           src={videoLink}
@@ -79,7 +82,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
           height={size.height}
           className="absolute"
           frameBorder="0"
-          allow="autoplay; fullscreen; encrypted-media; gyroscope; picture-in-picture"
+          allow="autoplay; fullscreen;"
           allowFullScreen
           onLoad={handleLoadIframe}
         />
