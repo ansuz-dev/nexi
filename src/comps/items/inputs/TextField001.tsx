@@ -3,7 +3,7 @@ import cx from "classnames";
 import {InputProps} from "./inputprops";
 
 const TextField001 = React.forwardRef<HTMLInputElement, InputProps>(
-  (props: InputProps, ref): JSX.Element => {
+  (props, ref): JSX.Element => {
     const {
       label,
       helper,
