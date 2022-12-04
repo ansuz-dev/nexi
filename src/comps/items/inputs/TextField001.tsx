@@ -32,7 +32,7 @@ const TextField001 = React.forwardRef<HTMLInputElement, InputProps>(
         "focus:outline-secondary-600": color === "secondary",
         "outline-red-600 focus:outline-red-600": error,
         "pl-10": Boolean(lefticon),
-        "pr-10": Boolean(lefticon),
+        "pr-10": Boolean(righticon),
         "h-12": size === "large",
         "h-10": size === "medium",
         "h-8": size === "small",
