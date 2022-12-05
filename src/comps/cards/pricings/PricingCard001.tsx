@@ -1,7 +1,7 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr} from "../../../utils";
-import Button from "../../items/buttons/Button";
+import Button001 from "../../items/buttons/Button001";
 import {PricingCardProps} from "./pricingcardprops";
 
 const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
@@ -71,7 +71,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
               <span className={unitClass}>{unit}</span>
             </div>
           </div>
-          <Button
+          <Button001
             link
             type="outlined"
             color="primary"

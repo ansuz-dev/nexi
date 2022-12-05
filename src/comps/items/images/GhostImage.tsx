@@ -1,4 +1,5 @@
 import React, {useEffect, useRef} from "react";
+import cx from "classnames";
 import NextImage, {ImageProps} from "next/legacy/image";
 
 export interface GhostImageProps extends ImageProps {
@@ -23,6 +24,11 @@ const GhostImage = ({className, imgClassName, src, ...rest}: GhostImageProps): J
     }
   }, []);
 
+  const imgClass = cx(
+    "bg-no-repeat",
+    imgClassName,
+  );
+
   return (
     <div ref={imgRef} className={className}>
       {Boolean(src) && (
@@ -31,7 +37,7 @@ const GhostImage = ({className, imgClassName, src, ...rest}: GhostImageProps): J
           unselectable="on"
           unoptimized
           src={src}
-          className={imgClassName}
+          className={imgClass}
           {...rest}
         />
       )}
@@ -41,4 +47,4 @@ const GhostImage = ({className, imgClassName, src, ...rest}: GhostImageProps): J
 
 GhostImage.defaultProps = {imgClassName: null};
 
-export default GhostImage;
+export default React.memo(GhostImage);

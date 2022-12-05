@@ -1,7 +1,7 @@
 import React, {useCallback, useMemo, useState} from "react";
 import cx from "classnames";
 import Link from "next/link";
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {getAttr, getBlurData, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
 import {NavbarProps} from "./navbarprops";
@@ -12,7 +12,7 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
 
   const logo = getAttr(data, "logo");
   const logoUrl = getUrl(logo) as string;
-  const thumbnailUrl = getFormatUrl(logo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(logo);
 
   const [isOpen, setIsOpen] = useState(false);
 

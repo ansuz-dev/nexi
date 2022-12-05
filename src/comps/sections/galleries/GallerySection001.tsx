@@ -3,7 +3,7 @@ import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
-import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import {getAttr, getBlurData, getFormatUrl, getUrl, isGray} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
 import {GallerySectionProps} from "./gallerysectionprops";
 
@@ -35,10 +35,11 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
           style={{paddingBottom: 50}}
           loop
           spaceBetween={4}
-          slidesPerView={1}
+          slidesPerView="auto"
           pagination={{clickable: true}}
           modules={[Pagination]}
           breakpoints={{
+            320: {slidesPerView: 1},
             640: {slidesPerView: 2},
             768: {slidesPerView: 3},
             1024: {slidesPerView: 4},
@@ -49,7 +50,7 @@ const GallerySection001 = ({data, classes}: GallerySectionProps): JSX.Element =>
             if (!photo) {
               photoUrl = getUrl(photo) as string;
             }
-            const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+            const thumbnailUrl = getBlurData(photo);
 
             return (
               <SwiperSlide key={index}>

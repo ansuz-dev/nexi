@@ -1,7 +1,7 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 
-import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import {getAttr, getBlurData, getFormatUrl, getUrl, isGray} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
 import {GallerySectionProps} from "./gallerysectionprops";
 
@@ -55,7 +55,7 @@ const GallerySection002 = ({data, classes}: GallerySectionProps): JSX.Element =>
                 if (!photo) {
                   photoUrl = getUrl(photo) as string;
                 }
-                const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+                const thumbnailUrl = getBlurData(photo);
 
                 return (
                   <GhostImage

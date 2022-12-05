@@ -6,6 +6,8 @@ import {ComponentType} from "react";
 // eslint-disable-next-line no-process-env
 const domain = process.env.NEXT_PUBLIC_STRAPI_API_URL as string;
 
+const shimmerWidth = 100;
+
 export interface Layouts<P> {
   [key: string]: ComponentType<P>;
 }
@@ -140,4 +142,11 @@ export function stepperLoop(
   runLoop(state).catch(err => console.log(err));
 
   return state;
+}
+
+export function getBlurData(photo: unknown): string {
+  const thumbnail = getFormatUrl(photo, "thumbnail");
+  if (thumbnail) return thumbnail;
+
+  return shimmerBlur(shimmerWidth, shimmerWidth);
 }

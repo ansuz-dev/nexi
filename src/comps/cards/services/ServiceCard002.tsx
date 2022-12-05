@@ -1,7 +1,7 @@
 import React from "react";
 import cx from "classnames";
 import Link from "next/link";
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {getAttr, getBlurData, getFormatUrl, getUrl} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
 import {ServiceCardProps} from "./servicecardprops";
 
@@ -14,7 +14,7 @@ const ServiceCard002 = ({service, classes}: ServiceCardProps): JSX.Element => {
   if (!photo) {
     photoUrl = getUrl(photo) as string;
   }
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(photo);
 
   const rootClass = cx(
     "servicecard002",

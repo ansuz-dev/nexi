@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
-import {getAttr, getFormatUrl, getUrl, isGray} from "../../../utils";
+import {getAttr, getBlurData, getUrl, isGray} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
 import {QuoteSectionProps} from "./quotesectionprops";
 
@@ -12,7 +12,7 @@ const QuoteSection001 = ({data, classes}: QuoteSectionProps): JSX.Element => {
 
   const photo = getAttr(data, "photo");
   const photoUrl = getUrl(photo) as string;
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(photo);
 
   const {
     rootClass,

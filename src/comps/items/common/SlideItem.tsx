@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useRef, useState} from "react";
 import Image from "next/legacy/image";
 import {useSwiperSlide} from "swiper/react";
-import {getFormatUrl, getUrl} from "../../../utils";
+import {getBlurData, getUrl} from "../../../utils";
 
 export interface SlideItemProps {
   photo?: unknown;
@@ -15,7 +15,7 @@ const ratio = 16 / 9;
 const SlideItem = (props: SlideItemProps): JSX.Element => {
   const {photo, videoLink} = props;
   const photoUrl = getUrl(photo) as string;
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(photo);
 
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [size, setSize] = useState({width: 0, height: 0});

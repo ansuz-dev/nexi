@@ -5,6 +5,7 @@ import {SelectProps} from "./inputprops";
 
 const Select001 = (props: SelectProps): JSX.Element => {
   const {
+    name,
     label,
     helper,
     color,
@@ -36,6 +37,7 @@ const Select001 = (props: SelectProps): JSX.Element => {
     <div className={rootClass}>
       {Boolean(label) && <label className={labelClass}>{label}</label>}
       <Select
+        instanceId={name}
         {...rest}
         className={selectClass}
         classNamePrefix="select001"

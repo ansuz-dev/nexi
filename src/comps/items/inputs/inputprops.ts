@@ -26,6 +26,7 @@ export interface GlobalInputProps extends InputProps {
 }
 
 export interface SelectProps {
+  name: string;
   label?: string;
   helper?: string;
   placeholder?: string;

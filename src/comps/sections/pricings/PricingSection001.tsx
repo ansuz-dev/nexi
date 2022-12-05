@@ -84,10 +84,11 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
             <Swiper
               style={{paddingBottom: 50}}
               spaceBetween={0}
-              slidesPerView={1}
+              slidesPerView="auto"
               pagination={{clickable: true}}
               modules={[Pagination]}
               breakpoints={{
+                320: {slidesPerView: 1},
                 640: {slidesPerView: 2},
                 768: {slidesPerView: 3},
                 1024: {slidesPerView: 4},

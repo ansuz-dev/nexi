@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {getAttr, getBlurData, getFormatUrl, getUrl} from "../../../utils";
 import GhostImage from "../../items/images/GhostImage";
 import {ServiceCardProps} from "./servicecardprops";
 
@@ -13,7 +13,7 @@ const ServiceCard001 = ({service, classes}: ServiceCardProps): JSX.Element => {
   if (!photo) {
     photoUrl = getUrl(photo) as string;
   }
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(photo);
 
   const {
     rootClass,

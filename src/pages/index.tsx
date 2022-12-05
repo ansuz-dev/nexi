@@ -19,6 +19,7 @@ import StatsSection from "../comps/sections/stats/StatsSection";
 import PricingSection from "../comps/sections/pricings/PricingSection";
 import PreviewSection from "../comps/sections/previews/PreviewSection";
 import QuoteSection from "../comps/sections/quotes/QuoteSection";
+import GallerySection from "../comps/sections/galleries/GallerySection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -155,7 +156,7 @@ const Home = (): JSX.Element => (
               linkTitle: "Order me",
             },
             {
-              title: "Plan 1",
+              title: "Plan 2",
               price: "300",
               unit: "euros",
               plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
@@ -164,7 +165,7 @@ const Home = (): JSX.Element => (
               linkTitle: "Order me",
             },
             {
-              title: "Plan 1",
+              title: "Plan 3",
               price: "300",
               unit: "euros",
               plan: "Lorem ipsum\nLorem ipsum\nLorem ipsum\nLorem ipsum",
@@ -212,6 +213,22 @@ const Home = (): JSX.Element => (
             },
           ],
           photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+        }}
+      />
+
+      <GallerySection
+        data={{
+          layout: "gs001",
+          title: "Gallery section",
+          subtitle: "Lorem ipsum",
+          photos: {
+            data: [
+              {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}},
+              {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}},
+              {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}},
+              {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}},
+            ],
+          },
         }}
       />
 
@@ -265,6 +282,7 @@ const Home = (): JSX.Element => (
           />
 
           <Select
+            name="service"
             label="Service"
             size="medium"
             color="primary"
@@ -278,6 +296,7 @@ const Home = (): JSX.Element => (
           />
 
           <Select
+            name="reason"
             label="Test"
             size="medium"
             color="secondary"

@@ -1,6 +1,6 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
-import {getAttr, getFormatUrl, getUrl} from "../../../utils";
+import {getAttr, getBlurData, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
 import {HeaderSectionProps} from "./headersectionprops";
@@ -11,7 +11,7 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const links = getAttr(data, "links") as Array<unknown> | undefined;
   const photo = getAttr(data, "slides", 0, "photo");
   const photoUrl = getUrl(photo) as string;
-  const thumbnailUrl = getFormatUrl(photo, "thumbnail") as string;
+  const thumbnailUrl = getBlurData(photo);
 
   const {
     rootClass,
