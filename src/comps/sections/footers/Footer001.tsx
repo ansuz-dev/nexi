@@ -1,5 +1,6 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
+import Link from "next/link";
 import {getAttr, getFormatUrl, getUrl} from "../../../utils";
 import ContactItem, {ContactItemProps} from "../../items/common/ContactItem";
 import SocialsItem from "../../items/common/SocialsItem";
@@ -10,6 +11,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
   const addresses = getAttr(data, "addresses") as Array<unknown>;
   const contacts = getAttr(data, "contacts") as Array<ContactItemProps>;
   const socialLinks = getAttr(data, "socialLinks") as Array<unknown>;
+  const links = getAttr(data, "links") as Array<unknown>;
   const copyright = getAttr(data, "copyright") as string;
 
   const logo = getAttr(data, "logo");
@@ -23,6 +25,7 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
     rootClass,
     containerClass,
     logoClass,
+    linksClass,
   } = useMemo(() => ({
     rootClass: cx(
       "footer001",
@@ -38,6 +41,11 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
       "footer-logo",
       "relative w-full h-36",
       classes?.logo,
+    ),
+    linksClass: cx(
+      "footer-links",
+      "flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:divide-x divide-gray-300",
+      classes?.links,
     ),
   }), [classes]);
 
@@ -104,7 +112,21 @@ const Footer001 = ({data, classes}: FooterProps): JSX.Element => {
             )}
           </div>
         </div>
-        <div>
+        <div className="space-y-4">
+          {Boolean(links) && (
+            <div className={linksClass}>
+              {
+                links.map(link => {
+                  const href = getAttr(link, "link") as string;
+                  return (
+                    <Link className="text-sm px-2" key={href} href={href}>
+                      {getAttr(link, "title") as string}
+                    </Link>
+                  );
+                })
+              }
+            </div>
+          )}
           <p className="text-xs leading-tight tracking-[0.4px] text-center">
             {copyright}
           </p>
