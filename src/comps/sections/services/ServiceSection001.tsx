@@ -2,18 +2,21 @@ import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import ServiceCard001 from "../../cards/services/ServiceCard001";
+import Button from "../../items/buttons/Button";
 import {ServiceSectionProps} from "./servicesectionprops";
 
 const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
   const background = getAttr(data, "background") as string;
   const services = getAttr(data, "services") as Array<unknown>;
+  const links = getAttr(data, "links") as Array<unknown>;
 
   const {
     rootClass,
     containerClass,
     titleClass,
     listClass,
+    linksClass,
   } = useMemo(() => ({
     rootClass: cx(
       "ss001",
@@ -39,6 +42,11 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
       "grid md:grid-cols-2 gap-6",
       classes?.list,
     ),
+    linksClass: cx(
+      "section-links",
+      "flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4",
+      classes?.links,
+    ),
   }), [background, classes]);
 
   return (
@@ -51,6 +59,20 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
               <div className={listClass}>
                 {services.map((service, index) => (
                   <ServiceCard001 key={index} service={service} />
+                ))}
+              </div>
+            )}
+            {Boolean(links) && (
+              <div className={linksClass}>
+                {links.map((link, index) => (
+                  <Button
+                    key={index}
+                    link
+                    className="w-full md:w-auto"
+                    type="outlined"
+                    href={getAttr(link, "link") as string}
+                    label={getAttr(link, "title") as string}
+                  />
                 ))}
               </div>
             )}

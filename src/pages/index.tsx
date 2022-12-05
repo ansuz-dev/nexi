@@ -81,7 +81,7 @@ const Home = (): JSX.Element => (
 
       <ServiceSection
         data={{
-          layout: "ss001",
+          layout: "ss004",
           title: "Service section",
           subtitle: "Lorem ipsum",
           background: "gray",
