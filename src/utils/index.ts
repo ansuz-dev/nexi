@@ -150,3 +150,7 @@ export function getBlurData(photo: unknown): string {
 
   return shimmerBlur(shimmerWidth, shimmerWidth);
 }
+
+export function fixContent(content: string): string {
+  return content.replaceAll("/uploads/", `${domain}/uploads/`);
+}

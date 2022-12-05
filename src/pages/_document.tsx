@@ -24,7 +24,7 @@ const MyDocument = (): JSX.Element => (
       <meta name="theme-color" content="#123D93" />
 
       <link rel="manifest" href="/manifest.json" />
-      <link rel="shortcut icon" href="/favicon.png" />
+      <link rel="shortcut icon" href="/favicon.ico" />
 
       <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500;600;700&family=Roboto:wght@400;500;600;700&display=swap"

@@ -3,6 +3,7 @@ import React from "react";
 import "../styles/globals.css";
 import "../styles/gs001.scss";
 import "../styles/ps001.scss";
+import "../styles/ts001.scss";
 import "../styles/select001.scss";
 
 import type {AppProps} from "next/app";

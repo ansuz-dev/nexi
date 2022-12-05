@@ -38,9 +38,9 @@ const Select001 = (props: SelectProps): JSX.Element => {
       {Boolean(label) && <label className={labelClass}>{label}</label>}
       <Select
         instanceId={name}
-        {...rest}
         className={selectClass}
         classNamePrefix="select001"
+        {...rest}
       />
       {Boolean(helper) && <span className={helperClass}>{helper}</span>}
     </div>

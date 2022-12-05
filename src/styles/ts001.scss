@@ -1,0 +1,50 @@
+.ts001 {
+  .section-content {
+    @apply text-base text-black-secondary break-words;
+    @apply leading-relaxed #{!important};
+
+    & > * {
+      @apply mb-4;
+    }
+
+    p,
+    span {
+      @apply text-black #{!important};
+    }
+
+    a {
+      @apply text-secondary-600;
+    }
+
+    img {
+      @apply w-full mx-auto;
+    }
+
+    blockquote {
+      @apply border-l-2 border-primary-600 px-4 italic;
+    }
+
+    pre {
+      @apply p-4 bg-gray-50 text-sm;
+    }
+
+    ul {
+      @apply list-disc ml-8 space-y-2;
+    }
+
+    .table {
+      @apply w-full #{!important};
+    }
+
+    table,
+    th,
+    td {
+      @apply border border-gray-300 border-collapse;
+    }
+
+    th,
+    td {
+      @apply px-2;
+    }
+  }
+}
