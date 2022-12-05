@@ -14,6 +14,7 @@ const TextSection001 = ({data, classes}: TextSectionProps): JSX.Element => {
   } = useMemo(() => ({
     rootClass: cx(
       "ts001",
+      "py-8 md:py-12",
       {"bg-neutral-50": isGray(background)},
       classes?.root,
     ),
@@ -31,11 +32,15 @@ const TextSection001 = ({data, classes}: TextSectionProps): JSX.Element => {
   return (
     <section className={rootClass}>
       <div className={containerClass}>
-        <div
-          className={contentClass}
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{__html: fixContent(content)}}
-        />
+        <div className="grid xl:grid-cols-12 gap-6">
+          <div className="xl:col-start-2 xl:col-span-10 space-y-6 lg:space-y-8">
+            <div
+              className={contentClass}
+              // eslint-disable-next-line react/no-danger
+              dangerouslySetInnerHTML={{__html: fixContent(content)}}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
