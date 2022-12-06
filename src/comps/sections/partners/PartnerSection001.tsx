@@ -1,14 +1,14 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
-import ServiceCard004 from "../../cards/services/ServiceCard004";
+import PartnerCard001 from "../../cards/partners/PartnerCard001";
 import Button from "../../items/buttons/Button";
-import {ServiceSectionProps} from "./servicesectionprops";
+import {PartnerSectionProps} from "./partnersectionprops";
 
-const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element => {
+const PartnerSection004 = ({data, classes}: PartnerSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
   const background = getAttr(data, "background") as string;
-  const services = getAttr(data, "services") as Array<unknown>;
+  const partners = getAttr(data, "partners") as Array<unknown>;
   const links = getAttr(data, "links") as Array<unknown>;
 
   const {
@@ -19,7 +19,7 @@ const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element =>
     linksClass,
   } = useMemo(() => ({
     rootClass: cx(
-      "ss004",
+      "pns001",
       "py-8 md:py-12",
       {"bg-neutral-50": isGray(background)},
       classes?.root,
@@ -39,7 +39,7 @@ const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element =>
     ),
     listClass: cx(
       "section-list",
-      "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6",
+      "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5",
       classes?.list,
     ),
     linksClass: cx(
@@ -53,10 +53,10 @@ const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element =>
     <section className={rootClass}>
       <div className={containerClass}>
         <h3 className={titleClass}>{title}</h3>
-        {Boolean(services) && (
+        {Boolean(partners) && (
           <div className={listClass}>
-            {services.map((service, index) => (
-              <ServiceCard004 key={index} service={service} />
+            {partners.map((partner, index) => (
+              <PartnerCard001 key={index} partner={partner} />
             ))}
           </div>
         )}
@@ -78,4 +78,4 @@ const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element =>
   );
 };
 
-export default React.memo(ServiceSection004);
+export default React.memo(PartnerSection004);

@@ -30,6 +30,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
     contentClass: cx(
       "pc-content",
       "bg-white px-4 xl:px-6 py-14 lg:py-16 space-y-6 border border-neutral-100",
+      "hover:border-neutral-200",
       classes?.content,
     ),
     titleClass: cx(

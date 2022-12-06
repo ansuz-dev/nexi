@@ -20,6 +20,7 @@ import PricingSection from "../comps/sections/pricings/PricingSection";
 import PreviewSection from "../comps/sections/previews/PreviewSection";
 import QuoteSection from "../comps/sections/quotes/QuoteSection";
 import GallerySection from "../comps/sections/galleries/GallerySection";
+import PartnerSection from "../comps/sections/partners/PartnerSection";
 
 const Home = (): JSX.Element => (
   <div>
@@ -107,6 +108,44 @@ const Home = (): JSX.Element => (
             {
               name: "Service 2",
               description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-2",
+            },
+          ],
+          links: [
+            {title: "Link 1", link: "/link-1"},
+            {title: "Link 2", link: "/link-2"},
+          ],
+        }}
+      />
+
+      <PartnerSection
+        data={{
+          layout: "pns001",
+          title: "Partner section",
+          subtitle: "Lorem ipsum",
+          background: "gray",
+          partners: [
+            {
+              name: "Partner 1",
+              introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "https://google.com",
+            },
+            {
+              name: "Partner 2",
+              introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+              link: "/service-2",
+            },
+            {
+              name: "Partner 3",
+              introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
+              photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
+            },
+            {
+              name: "Partner 4",
+              introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas commodo neque id cursus consequat. Nam aliquam odio in est viverra euismod. Aliquam in massa at enim luctus ultrices in vel libero. Aliquam ultrices nisl sed efficitur pellentesque.",
               photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1516876902004-79f4bd1cb0dc"}}},
               link: "/service-2",
             },

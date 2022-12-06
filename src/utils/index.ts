@@ -154,3 +154,11 @@ export function getBlurData(photo: unknown): string {
 export function fixContent(content: string): string {
   return content.replaceAll("/uploads/", `${domain}/uploads/`);
 }
+
+export function isAbsoluteURL(url: string): boolean {
+  if (!url) return false;
+
+  const regex = /^(http:\/\/|https:\/\/|ftp:\/\/|git+ssh:\/\/|mailto:|tel:|geo:|maps:\/\/)/gui;
+
+  return regex.test(url);
+}
