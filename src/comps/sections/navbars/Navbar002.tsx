@@ -43,7 +43,7 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
     ),
     logoClass: cx(
       "navbar-logo",
-      "relative w-20 h-16 md:h-20",
+      "relative w-32 h-20 md:h-28",
       classes?.logo,
     ),
     linksClass: cx(
