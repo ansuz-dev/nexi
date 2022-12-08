@@ -2,6 +2,7 @@
   .section-content {
     @apply text-base text-black-secondary break-words;
     @apply leading-relaxed #{!important};
+    word-break: break-word;
 
     & > * {
       @apply mb-4;
@@ -44,8 +45,7 @@
 
     th,
     td {
-      @apply px-2;
-      @apply text-sm break-all md:break-words;
+      @apply text-sm px-2;
     }
   }
 }
