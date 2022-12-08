@@ -45,6 +45,7 @@
     th,
     td {
       @apply px-2;
+      @apply text-sm break-all md:break-words;
     }
   }
 }
