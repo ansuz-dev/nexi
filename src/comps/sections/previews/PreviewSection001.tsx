@@ -3,6 +3,7 @@ import cx from "classnames";
 import {Document, Page, pdfjs} from "react-pdf";
 
 import {getAttr, getUrl, isGray} from "../../../utils";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {PreviewSectionProps} from "./previewsectionprops";
 
 pdfjs.GlobalWorkerOptions.workerSrc
@@ -17,6 +18,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
   const background = getAttr(data, "background") as string;
   const document = getAttr(data, "document");
   const fileUrl = getUrl(document);
+  const links = getAttr(data, "links") as Array<unknown>;
 
   const [pdfWidth, setPdfWidth] = useState(defaultWidth);
   const pdfRef = useRef<HTMLDivElement>(null);
@@ -35,6 +37,7 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
     titleClass,
     subtitleClass,
     documentClass,
+    linksClass,
   } = useMemo(() => ({
     rootClass: cx(
       "prs001",
@@ -65,6 +68,11 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
       "flex flex-col items-center bg-neutral-50 md:py-6 space-y-4",
       classes?.document,
     ),
+    linksClass: cx(
+      "section-links",
+      "flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4",
+      classes?.links,
+    ),
   }), [background, classes]);
 
   useEffect(() => {
@@ -91,31 +99,32 @@ const PreviewSection001 = ({data, classes}: PreviewSectionProps): JSX.Element =>
             {Boolean(subtitle) && <p className={subtitleClass}>{subtitle}</p>}
           </div>
         </div>
-        {
-          Boolean(fileUrl) && (
-            <div className="grid lg:grid-cols-12 lg:gap-6">
-              <div ref={pdfRef} className="lg:col-start-2 lg:col-span-10 space-y-8">
-                <Document
-                  className={documentClass}
-                  file={fileUrl}
-                  onLoadSuccess={onDocumentLoadSuccess}
-                  renderMode="canvas"
-                >
-                  {Array.from(new Array(numPages), (el, index) => (
-                    <Page
-                      key={`page_${index + 1}`}
-                      pageNumber={index + 1}
-                      width={pdfWidth}
-                      renderAnnotationLayer={false}
-                      renderTextLayer={false}
-                      className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
-                    />
-                  ))}
-                </Document>
-              </div>
-            </div>
-          )
-        }
+        {Boolean(fileUrl) && (<div className="grid lg:grid-cols-12 lg:gap-6">
+          <div ref={pdfRef} className="lg:col-start-2 lg:col-span-10 space-y-8">
+            <Document
+              className={documentClass}
+              file={fileUrl}
+              onLoadSuccess={onDocumentLoadSuccess}
+              renderMode="canvas"
+            >
+              {Array.from(new Array(numPages), (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  width={pdfWidth}
+                  renderAnnotationLayer={false}
+                  renderTextLayer={false}
+                  className="drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)]"
+                />
+              ))}
+            </Document>
+          </div>
+        </div>
+        )}
+        <ButtonGroup
+          className={linksClass}
+          buttons={links}
+        />
       </div>
     </section>
   );

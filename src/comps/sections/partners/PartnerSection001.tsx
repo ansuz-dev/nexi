@@ -1,10 +1,8 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
-import {getAttr, getUrl, isGray} from "../../../utils";
+import {getAttr, isGray} from "../../../utils";
 import PartnerCard001 from "../../cards/partners/PartnerCard001";
-import Button from "../../items/buttons/Button";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
-import GhostImage from "../../items/images/GhostImage";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {PartnerSectionProps} from "./partnersectionprops";
 
 const PartnerSection004 = ({data, classes}: PartnerSectionProps): JSX.Element => {
@@ -62,33 +60,11 @@ const PartnerSection004 = ({data, classes}: PartnerSectionProps): JSX.Element =>
             ))}
           </div>
         )}
-        {Boolean(links) && (
-          <div className={linksClass}>
-            {links.map((link, index) => {
-              const href = getAttr(link, "link") as string;
-              const label = getAttr(link, "title") as string;
-              const type = getAttr(link, "title") as ButtonTypes;
-              const icon = getAttr(link, "icon");
-              const iconUrl = getUrl(icon) as string;
-
-              return (
-                <Button
-                  key={index}
-                  link
-                  size="large"
-                  href={href}
-                  label={label}
-                  type={type}
-                  icon={iconUrl ? <GhostImage
-                    src={iconUrl}
-                    className="relative w-6 h-6"
-                    layout="fill"
-                  /> : undefined}
-                />
-              );
-            })}
-          </div>
-        )}
+        <ButtonGroup
+          size="large"
+          className={linksClass}
+          buttons={links}
+        />
       </div>
     </section>
   );
