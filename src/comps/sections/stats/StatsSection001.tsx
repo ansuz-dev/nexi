@@ -1,10 +1,9 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import StatCard001 from "../../cards/stats/StatCard001";
-import {StatsSectionProps} from "./statssectionprops";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
+import {StatsSectionProps} from "./statssectionprops";
 
 const StatsSection001 = ({data, classes}: StatsSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;

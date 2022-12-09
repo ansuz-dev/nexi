@@ -2,9 +2,8 @@ import React, {useCallback, useMemo, useState} from "react";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {NavbarProps} from "./navbarprops";
 
 const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
@@ -93,35 +92,6 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
     </ul>
   ), [active, links, linksClass]);
 
-  const rightNavLinks = useMemo(() => Boolean(rightLinks) && (
-    <ul className={rightLinksClass}>
-      {
-        rightLinks.map((item, index) => {
-          const href = getAttr(item, "link") as string;
-          const label = getAttr(item, "title") as string;
-          const type = getAttr(item, "title") as ButtonTypes;
-          const icon = getAttr(item, "icon");
-          const iconUrl = getUrl(icon) as string;
-
-          return (
-            <Button
-              key={index}
-              link
-              href={href}
-              label={label}
-              type={type}
-              icon={iconUrl ? <GhostImage
-                src={iconUrl}
-                className="relative w-6 h-6"
-                layout="fill"
-              /> : undefined}
-            />
-          );
-        })
-      }
-    </ul>
-  ), [rightLinks, rightLinksClass]);
-
   const menuLinks = useMemo(() => Boolean(links) && (
     <ul>
       {
@@ -180,7 +150,10 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
           </Link>
         </div>
         {navLinks}
-        {rightNavLinks}
+        <ButtonGroup
+          className={rightLinksClass}
+          buttons={rightLinks}
+        />
       </div>
       <div className={menuClass}>
         <div className="container mx-auto">

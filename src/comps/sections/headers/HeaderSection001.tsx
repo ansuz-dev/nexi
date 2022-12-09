@@ -1,11 +1,9 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
-import {HeaderSectionProps} from "./headersectionprops";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
+import {HeaderSectionProps} from "./headersectionprops";
 
 const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;

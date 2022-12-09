@@ -2,11 +2,8 @@ import React, {useEffect, useMemo, useState} from "react";
 import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperClass, {EffectFade} from "swiper";
-import {getAttr, getUrl, stepperLoop} from "../../../utils";
-import Button from "../../items/buttons/Button";
+import {getAttr, stepperLoop} from "../../../utils";
 import SlideItem, {SlideItemProps} from "../../items/common/SlideItem";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
-import GhostImage from "../../items/images/GhostImage";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {HeaderSectionProps} from "./headersectionprops";
 

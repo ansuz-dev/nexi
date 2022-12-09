@@ -1,10 +1,7 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
-import {getAttr, getUrl} from "../../../utils";
-import Button from "../../items/buttons/Button";
+import {getAttr} from "../../../utils";
 import SlideItem, {SlideItemProps} from "../../items/common/SlideItem";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
-import GhostImage from "../../items/images/GhostImage";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {HeaderSectionProps} from "./headersectionprops";
 

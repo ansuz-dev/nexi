@@ -2,9 +2,7 @@ import React, {useCallback, useMemo, useState} from "react";
 import cx from "classnames";
 import Link from "next/link";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {NavbarProps} from "./navbarprops";
 

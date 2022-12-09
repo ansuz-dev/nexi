@@ -2,9 +2,8 @@ import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import ServiceCard004 from "../../cards/services/ServiceCard004";
-import Button from "../../items/buttons/Button";
-import {ServiceSectionProps} from "./servicesectionprops";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
+import {ServiceSectionProps} from "./servicesectionprops";
 
 const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;

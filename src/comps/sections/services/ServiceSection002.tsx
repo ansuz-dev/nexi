@@ -2,7 +2,6 @@ import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import ServiceCard002 from "../../cards/services/ServiceCard002";
-import Button from "../../items/buttons/Button";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {ServiceSectionProps} from "./servicesectionprops";
 

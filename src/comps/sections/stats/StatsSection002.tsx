@@ -1,7 +1,6 @@
 import React, {useMemo} from "react";
 import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
-import Button from "../../items/buttons/Button";
 import StatCard002 from "../../cards/stats/StatCard002";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {StatsSectionProps} from "./statssectionprops";

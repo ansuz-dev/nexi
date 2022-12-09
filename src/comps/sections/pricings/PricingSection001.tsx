@@ -3,11 +3,8 @@ import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
-import {getAttr, getUrl, isGray} from "../../../utils";
-import Button from "../../items/buttons/Button";
+import {getAttr, isGray} from "../../../utils";
 import PricingCard001 from "../../cards/pricings/PricingCard001";
-import {ButtonTypes} from "../../items/buttons/buttonprops";
-import GhostImage from "../../items/images/GhostImage";
 import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {PricingSectionProps} from "./pricingsectionprops";
 
