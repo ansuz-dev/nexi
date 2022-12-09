@@ -4,6 +4,7 @@ import {getAttr, isGray} from "../../../utils";
 import ServiceCard004 from "../../cards/services/ServiceCard004";
 import Button from "../../items/buttons/Button";
 import {ServiceSectionProps} from "./servicesectionprops";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 
 const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
@@ -60,19 +61,11 @@ const ServiceSection004 = ({data, classes}: ServiceSectionProps): JSX.Element =>
             ))}
           </div>
         )}
-        {Boolean(links) && (
-          <div className={linksClass}>
-            {links.map((link, index) => (
-              <Button
-                key={index}
-                link
-                className="w-full md:w-auto"
-                href={getAttr(link, "link") as string}
-                label={getAttr(link, "title") as string}
-              />
-            ))}
-          </div>
-        )}
+        <ButtonGroup
+          className={linksClass}
+          buttonClassName="w-full md:w-auto"
+          buttons={links}
+        />
       </div>
     </section>
   );

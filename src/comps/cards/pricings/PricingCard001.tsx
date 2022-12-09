@@ -74,7 +74,7 @@ const PricingCard001 = ({pricing, classes}: PricingCardProps): JSX.Element => {
           </div>
           <Button001
             link
-            type="outlined"
+            type="outline"
             color="primary"
             size="small"
             href={link}

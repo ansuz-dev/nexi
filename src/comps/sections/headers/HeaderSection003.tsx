@@ -2,9 +2,12 @@ import React, {useEffect, useMemo, useState} from "react";
 import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import SwiperClass, {EffectFade} from "swiper";
-import {getAttr, stepperLoop} from "../../../utils";
+import {getAttr, getUrl, stepperLoop} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import SlideItem, {SlideItemProps} from "../../items/common/SlideItem";
+import {ButtonTypes} from "../../items/buttons/buttonprops";
+import GhostImage from "../../items/images/GhostImage";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {HeaderSectionProps} from "./headersectionprops";
 
 const defaultDuration = 5;
@@ -78,17 +81,11 @@ const HeaderSection003 = ({data, classes}: HeaderSectionProps): JSX.Element => {
               <h3 className={titleClass}>{title}</h3>
               <h6 className={subtitleClass}>{subtitle}</h6>
             </div>
-            <div className={linksClass}>
-              {links?.map((link, index) => (
-                <Button
-                  key={index}
-                  link
-                  size="large"
-                  href={getAttr(link, "link") as string}
-                  label={getAttr(link, "title") as string}
-                />
-              ))}
-            </div>
+            <ButtonGroup
+              className={linksClass}
+              size="large"
+              buttons={links}
+            />
           </div>
         </div>
       </div>

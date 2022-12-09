@@ -113,7 +113,7 @@ const Home = (): JSX.Element => (
             },
           ],
           links: [
-            {title: "Link 1", link: "/link-1"},
+            {title: "Link 1", link: "/link-1", type: "outline", icon: {data: {attributes: {url: "https://cms.hestiaecobat.fr/uploads/alarm_on_b22d73a308.svg"}}}},
             {title: "Link 2", link: "/link-2"},
           ],
         }}
@@ -276,7 +276,7 @@ const Home = (): JSX.Element => (
           <Button
             className="w-full"
             label="Click me"
-            type="outlined"
+            type="outline"
           />
 
           <Button
@@ -284,21 +284,21 @@ const Home = (): JSX.Element => (
             className="w-full"
             label="Click me"
             href="/test"
-            type="outlined"
+            type="outline"
           />
         </div>
 
         <div className="space-x-4">
           <Button
             label="Click me"
-            type="outlined"
+            type="outline"
           />
 
           <Button
             link
             label="Click me"
             href="/test"
-            type="outlined"
+            type="outline"
           />
         </div>
 

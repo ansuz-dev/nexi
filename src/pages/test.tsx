@@ -1,16 +1,115 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Button from "../comps/items/buttons/Button";
 import Select from "../comps/items/inputs/Select";
 import TextSection from "../comps/sections/texts/TextSection";
+import PhoneIcon from "../../assets/phone.svg";
+import GhostImage from "../comps/items/images/GhostImage";
 
-const TestPage = props => (
+const TestPage = (): JSX.Element => (
   <div className="py-10 space-y-10">
-    <div className="container mx-auto">
+    <div className="container mx-auto space-x-2">
       <Button
         link
         href="/"
         label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="outline"
+        href="/"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="text"
+        href="/"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        color="secondary"
+        href="/"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="outline"
+        color="secondary"
+        href="/"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="text"
+        color="secondary"
+        href="/"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+    </div>
+
+    <div className="container mx-auto space-x-2">
+      <Button
+        link
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<GhostImage
+          src="https://cms.hestiaecobat.fr/uploads/alarm_on_b22d73a308.svg"
+          className="relative w-6 h-6"
+          layout="fill"
+        />}
+      />
+      <Button
+        link
+        type="outline"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="text"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="outline"
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        link
+        type="text"
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<GhostImage
+          src="https://cms.hestiaecobat.fr/uploads/alarm_on_b22d73a308.svg"
+          className="relative w-6 h-6"
+          layout="fill"
+        />}
       />
     </div>
 

@@ -3,6 +3,7 @@ import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import ServiceCard001 from "../../cards/services/ServiceCard001";
 import Button from "../../items/buttons/Button";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {ServiceSectionProps} from "./servicesectionprops";
 
 const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element => {
@@ -62,20 +63,11 @@ const ServiceSection001 = ({data, classes}: ServiceSectionProps): JSX.Element =>
                 ))}
               </div>
             )}
-            {Boolean(links) && (
-              <div className={linksClass}>
-                {links.map((link, index) => (
-                  <Button
-                    key={index}
-                    link
-                    className="w-full md:w-auto"
-                    type="outlined"
-                    href={getAttr(link, "link") as string}
-                    label={getAttr(link, "title") as string}
-                  />
-                ))}
-              </div>
-            )}
+            <ButtonGroup
+              className={linksClass}
+              buttonClassName="w-full md:w-auto"
+              buttons={links}
+            />
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-export type ButtonTypes = "solid" | "outlined";
+export type ButtonTypes = "solid" | "outline" | "text";
 
 export type ButtonColors = "primary" | "secondary";
 
@@ -14,6 +14,7 @@ export interface ButtonProps {
   size?: ButtonSizes;
   className?: string;
   href?: string;
+  icon?: JSX.Element;
   onClick?: () => void;
 }
 

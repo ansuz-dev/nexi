@@ -3,6 +3,7 @@ import cx from "classnames";
 import {getAttr, isGray} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import StatCard002 from "../../cards/stats/StatCard002";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {StatsSectionProps} from "./statssectionprops";
 
 const StatsSection002 = ({data, classes}: StatsSectionProps): JSX.Element => {
@@ -60,19 +61,11 @@ const StatsSection002 = ({data, classes}: StatsSectionProps): JSX.Element => {
             ))}
           </div>
         )}
-        {Boolean(links) && (
-          <div className={linksClass}>
-            {links.map((link, index) => (
-              <Button
-                key={index}
-                link
-                className="w-full md:w-auto"
-                href={getAttr(link, "link") as string}
-                label={getAttr(link, "title") as string}
-              />
-            ))}
-          </div>
-        )}
+        <ButtonGroup
+          className={linksClass}
+          buttonClassName="w-full md:w-auto"
+          buttons={links}
+        />
       </div>
 
     </section>

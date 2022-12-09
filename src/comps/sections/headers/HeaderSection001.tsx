@@ -3,7 +3,9 @@ import cx from "classnames";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
+import {ButtonTypes} from "../../items/buttons/buttonprops";
 import {HeaderSectionProps} from "./headersectionprops";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 
 const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
@@ -59,17 +61,11 @@ const HeaderSection001 = ({data, classes}: HeaderSectionProps): JSX.Element => {
               <h3 className={titleClass}>{title}</h3>
               <h6 className={subtitleClass}>{subtitle}</h6>
             </div>
-            <div className={linksClass}>
-              {links?.map((link, index) => (
-                <Button
-                  key={index}
-                  link
-                  size="large"
-                  href={getAttr(link, "link") as string}
-                  label={getAttr(link, "title") as string}
-                />
-              ))}
-            </div>
+            <ButtonGroup
+              className={linksClass}
+              size="large"
+              buttons={links}
+            />
           </div>
         </div>
       </div>

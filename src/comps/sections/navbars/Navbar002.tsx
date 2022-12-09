@@ -4,6 +4,7 @@ import Link from "next/link";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
+import {ButtonTypes} from "../../items/buttons/buttonprops";
 import {NavbarProps} from "./navbarprops";
 
 const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
@@ -95,16 +96,28 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
   const rightNavLinks = useMemo(() => Boolean(rightLinks) && (
     <ul className={rightLinksClass}>
       {
-        rightLinks.map((item, index) => (
-          <Button
-            key={index}
-            link
-            layout="btn001"
-            type="outlined"
-            label={getAttr(item, "title") as string}
-            href={getAttr(item, "link") as string}
-          />
-        ))
+        rightLinks.map((item, index) => {
+          const href = getAttr(item, "link") as string;
+          const label = getAttr(item, "title") as string;
+          const type = getAttr(item, "title") as ButtonTypes;
+          const icon = getAttr(item, "icon");
+          const iconUrl = getUrl(icon) as string;
+
+          return (
+            <Button
+              key={index}
+              link
+              href={href}
+              label={label}
+              type={type}
+              icon={iconUrl ? <GhostImage
+                src={iconUrl}
+                className="relative w-6 h-6"
+                layout="fill"
+              /> : undefined}
+            />
+          );
+        })
       }
     </ul>
   ), [rightLinks, rightLinksClass]);

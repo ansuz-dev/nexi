@@ -4,6 +4,8 @@ import Link from "next/link";
 import {getAttr, getBlurData, getUrl} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import GhostImage from "../../items/images/GhostImage";
+import {ButtonTypes} from "../../items/buttons/buttonprops";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {NavbarProps} from "./navbarprops";
 
 const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
@@ -92,23 +94,6 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
     </ul>
   ), [active, links, linksClass]);
 
-  const rightNavLinks = useMemo(() => Boolean(rightLinks) && (
-    <ul className={rightLinksClass}>
-      {
-        rightLinks.map((item, index) => (
-          <Button
-            key={index}
-            link
-            layout="btn001"
-            type="outlined"
-            label={getAttr(item, "title") as string}
-            href={getAttr(item, "link") as string}
-          />
-        ))
-      }
-    </ul>
-  ), [rightLinks, rightLinksClass]);
-
   const menuLinks = useMemo(() => Boolean(links) && (
     <ul>
       {
@@ -167,7 +152,10 @@ const Navbar001 = ({data, classes, active}: NavbarProps): JSX.Element => {
           </Link>
         </div>
         {navLinks}
-        {rightNavLinks}
+        <ButtonGroup
+          className={rightLinksClass}
+          buttons={rightLinks}
+        />
       </div>
       <div className={menuClass}>
         <div className="container mx-auto">

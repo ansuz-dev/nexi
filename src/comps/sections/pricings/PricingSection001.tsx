@@ -3,9 +3,12 @@ import cx from "classnames";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Pagination} from "swiper";
 
-import {getAttr, isGray} from "../../../utils";
+import {getAttr, getUrl, isGray} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import PricingCard001 from "../../cards/pricings/PricingCard001";
+import {ButtonTypes} from "../../items/buttons/buttonprops";
+import GhostImage from "../../items/images/GhostImage";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 import {PricingSectionProps} from "./pricingsectionprops";
 
 const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element => {
@@ -62,21 +65,10 @@ const PricingSection001 = ({data, classes}: PricingSectionProps): JSX.Element =>
               <h3 className={titleClass}>{title}</h3>
               <p className={subtitleClass}>{subtitle}</p>
             </div>
-            {Boolean(links) && (
-              <div className={linksClass}>
-                {links.map((link, index) => (
-                  <Button
-                    key={index}
-                    link
-                    className="w-full md:w-auto"
-                    type="solid"
-                    color="primary"
-                    href={getAttr(link, "link") as string}
-                    label={getAttr(link, "title") as string}
-                  />
-                ))}
-              </div>
-            )}
+            <ButtonGroup
+              className={linksClass}
+              buttons={links}
+            />
           </div>
         </div>
         {

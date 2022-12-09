@@ -4,6 +4,7 @@ import {getAttr, isGray} from "../../../utils";
 import Button from "../../items/buttons/Button";
 import StatCard001 from "../../cards/stats/StatCard001";
 import {StatsSectionProps} from "./statssectionprops";
+import ButtonGroup from "../../items/buttons/ButtonGroup";
 
 const StatsSection001 = ({data, classes}: StatsSectionProps): JSX.Element => {
   const title = getAttr(data, "title") as string;
@@ -60,19 +61,11 @@ const StatsSection001 = ({data, classes}: StatsSectionProps): JSX.Element => {
             ))}
           </div>
         )}
-        {Boolean(links) && (
-          <div className={linksClass}>
-            {links.map((link, index) => (
-              <Button
-                key={index}
-                link
-                className="w-full md:w-auto"
-                href={getAttr(link, "link") as string}
-                label={getAttr(link, "title") as string}
-              />
-            ))}
-          </div>
-        )}
+        <ButtonGroup
+          className={linksClass}
+          buttonClassName="w-full md:w-auto"
+          buttons={links}
+        />
       </div>
 
     </section>
