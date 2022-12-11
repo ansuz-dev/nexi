@@ -30,7 +30,10 @@ const Home = (): JSX.Element => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <SEOItem />
+    <SEOItem
+      title="HESTIA ECO BAT - Rénovation et dépannage de l'habitat"
+      description="HESTIA ECO BAT - Rénovation et dépannage de l'habitat - plomberie, électricité, chauffage, salle de bain, cuisine, rénovation complète - Des professionnels et des garanties"
+    />
 
     <Navbar
       active="/"

@@ -36,10 +36,10 @@ export interface SEOItemProps {
 }
 
 const SEOItem = (props: SEOItemProps): JSX.Element => {
-  const seoTitle = props.seo?.metaTitle ?? props.title;
-  const seoDescription = props.seo?.description ?? props.description;
-  const seoImage = getUrl(props.seo?.metaImage ?? props.cover);
-  const seoKeywords = props.seo?.keywords ?? props.keywords;
+  const seoTitle = props.seo?.metaTitle || props.title;
+  const seoDescription = props.seo?.description || props.description;
+  const seoImage = getUrl(props.seo?.metaImage || props.cover);
+  const seoKeywords = props.seo?.keywords || props.keywords;
 
   const fbMetaData = props.seo?.metaSocial?.find(e => e.socialNetwork === SocialNetworks.facebook);
   const twMetaData = props.seo?.metaSocial?.find(e => e.socialNetwork === SocialNetworks.twitter);
@@ -79,12 +79,7 @@ SEOItem.defaultProps = {
   keywords: "",
   cover: null,
   path: "",
-  seo: {
-    metaTitle: "",
-    metaDescription: "",
-    keywords: "",
-    metaImage: null,
-  },
+  seo: undefined,
 };
 
 export default React.memo(SEOItem);
