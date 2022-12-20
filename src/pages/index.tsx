@@ -67,17 +67,17 @@ const Home = (): JSX.Element => (
             {
               photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1669840528318-487ea0f70f04"}}},
               videoLink: "https://www.youtube.com/embed/nP4PRM7SRZE?autoplay=1&disablekb=1&loop=1&mute=1&playlist=nP4PRM7SRZE",
-              duration: 8,
+              duration: 18,
             },
             {
               photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1669907827996-f4bd504dfc34"}}},
               videoLink: "https://www.youtube.com/embed/Ha0OIwW1ItQ?autoplay=1&disablekb=1&loop=1&mute=1&playlist=Ha0OIwW1ItQ",
-              duration: 5,
+              duration: 15,
             },
             {
               photo: {data: {attributes: {url: "https://images.unsplash.com/photo-1657299170950-87e5b0eaf77c"}}},
               videoLink: "https://www.youtube.com/embed/GVN863lHN20?autoplay=1&disablekb=1&loop=1&mute=1&playlist=GVN863lHN20",
-              duration: 5,
+              duration: 15,
             },
           ],
         }}

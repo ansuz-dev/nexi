@@ -162,3 +162,7 @@ export function isAbsoluteURL(url: string): boolean {
 
   return regex.test(url);
 }
+
+export function isMobile(): boolean {
+  return Boolean(window.matchMedia("(min-width: 800px)"));
+}

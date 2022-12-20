@@ -11,6 +11,7 @@ export interface SlideItemProps {
 
 // eslint-disable-next-line @typescript-eslint/no-magic-numbers
 const ratio = 16 / 9;
+const mobileWidth = 800;
 
 const SlideItem = (props: SlideItemProps): JSX.Element => {
   const {photo, videoLink} = props;
@@ -18,6 +19,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
   const thumbnailUrl = getBlurData(photo);
 
   const [iframeLoaded, setIframeLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
   const [size, setSize] = useState({width: 0, height: 0});
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,6 +31,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
     const updateSize = () => {
       if (containerRef.current) {
         const {width, height} = containerRef.current.getBoundingClientRect();
+        setIsMobile(width <= mobileWidth);
 
         const rw = height * ratio;
         const rh = width / ratio;
@@ -60,7 +63,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
       ref={containerRef}
       className="relative w-full h-full flex justify-center items-center overflow-hidden"
     >
-      {(!iframeLoaded || !isActive) && Boolean(photoUrl) && (
+      {(isMobile || !iframeLoaded || !isActive) && Boolean(photoUrl) && (
         <Image
           src={photoUrl}
           alt="slide photo"
@@ -74,7 +77,7 @@ const SlideItem = (props: SlideItemProps): JSX.Element => {
           draggable={false}
         />
       )}
-      {Boolean(videoLink) && isActive && (
+      {!isMobile && Boolean(videoLink) && isActive && (
         <iframe
           ref={iframeRef}
           src={videoLink}
