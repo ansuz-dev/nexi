@@ -119,7 +119,7 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
   ), [active, closeMenu, links]);
 
   return (
-    <div className={rootClass}>
+    <nav className={rootClass}>
       <div className={containerClass}>
         <div className="flex items-center">
           <div className="lg:hidden mr-4" onClick={toggleMenu}>
@@ -160,7 +160,7 @@ const Navbar002 = ({data, classes, active}: NavbarProps): JSX.Element => {
           {menuLinks}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 import {ComponentType} from "react";
+import {encode} from "base-64";
 
 // eslint-disable-next-line no-process-env
 const domain = process.env.NEXT_PUBLIC_STRAPI_API_URL as string;
@@ -88,10 +89,8 @@ const shimmer = (w: number, h: number): string => `
   />
 </svg>`;
 
-const toBase64 = (str: string): string => typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str);
-
 export const shimmerBlur
-= (w: number, h: number): string => `data:image/svg+xml;base64,${toBase64(shimmer(w, h))}`;
+= (w: number, h: number): string => `data:image/svg+xml;base64,${encode(shimmer(w, h))}`;
 
 export const isGray = (background: string): boolean => {
   if (!background) return false;
