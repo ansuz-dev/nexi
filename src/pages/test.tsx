@@ -4,6 +4,8 @@ import Select from "../comps/items/inputs/Select";
 import TextSection from "../comps/sections/texts/TextSection";
 import PhoneIcon from "../../assets/phone.svg";
 import GhostImage from "../comps/items/images/GhostImage";
+import TextArea from "../comps/items/inputs/TextArea";
+import TextField from "../comps/items/inputs/TextField";
 
 const TestPage = (): JSX.Element => (
   <div className="py-10 space-y-10">
@@ -110,6 +112,19 @@ const TestPage = (): JSX.Element => (
           className="relative w-6 h-6"
           layout="fill"
         />}
+      />
+    </div>
+
+    <div className="container mx-auto space-y-2">
+      <TextArea
+        layout="default"
+        label="Textarea"
+        rows={5}
+      />
+
+      <TextField
+        layout="default"
+        label="Textfield"
       />
     </div>
 

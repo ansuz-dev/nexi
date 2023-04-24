@@ -6,6 +6,8 @@ export type InputSizes = "large" | "medium" | "small";
 
 export type InputLayouts = "default" | "input001";
 
+export type TexAreaLayouts = "default" | "textarea001";
+
 export type SelectLayouts = "default" | "select001";
 
 export interface InputProps {
@@ -23,6 +25,20 @@ export interface InputProps {
 
 export interface GlobalInputProps extends InputProps {
   layout: InputLayouts;
+}
+
+export interface TextAreaProps {
+  label?: string;
+  helper?: string;
+  placeholder?: string;
+  color?: InputColors;
+  error?: boolean;
+  className?: string;
+  rows?: number;
+}
+
+export interface GlobalTextAreaProps extends TextAreaProps {
+  layout: TexAreaLayouts;
 }
 
 export interface SelectProps {
