@@ -16,9 +16,9 @@ const Button002 = (props: ButtonProps) : JSX.Element => {
       "text-secondary-500 border-secondary-500 hover:text-white active:text-white hover:bg-secondary-400 active:bg-secondary-600 hover:border-secondary-400 active:border-secondary-600": props.type === "outline" && props.color === "secondary",
       "text-primary-500 hover:text-primary-400 active:text-primary-600": props.type === "text" && props.color === "primary",
       "text-secondary-500 hover:text-secondary-400 active:text-secondary-600": props.type === "text" && props.color === "secondary",
-      "text-sm lg:text-base h-14 px-5": props.size === "large",
-      "text-sm lg:text-base h-12 px-4": props.size === "medium",
-      "text-xs lg:text-sm h-9 px-2.5": props.size === "small",
+      "text-sm lg:text-base h-14 px-8": props.size === "large",
+      "text-sm lg:text-base h-12 px-6": props.size === "medium",
+      "text-xs lg:text-sm h-9 px-4": props.size === "small",
     },
     props.className,
   );

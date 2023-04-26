@@ -13,7 +13,7 @@
     "build-sb": "build-storybook",
     "prepublishOnly": "node scripts/addtype.cjs",
     "npm-publish": "npm run build && npm publish --access public",
-    "postpublish": "node scripts/removetype.cjs"
+    "postpublish": "node scripts/removetype.cjs && npm version patch --no-git-tag-version"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.2",
