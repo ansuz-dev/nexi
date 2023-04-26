@@ -1,5 +1,5 @@
 const fs = require("fs");
-const {spawn} = require("node:child_process");
+const {spawnSync, execSync} = require("child_process");
 
 const _package = require("../package.json");
 
@@ -10,8 +10,13 @@ delete _package.type;
 // eslint-disable-next-line no-magic-numbers
 fs.writeFileSync("package.json", `${JSON.stringify(_package, null, 2)}\n`);
 
-const tag = spawn("git", ["tag", "-a", `v${_package.version}`]);
+console.log("Add git tag");
 
-tag.on("close", () => {
-  console.log("Add git tag");
-});
+try {
+  // spawnSync("git", ["tag", "-a", `v${_package.version}`]);
+  execSync(`git tag -a v${_package.version}`);
+} catch (error) {
+  console.log(error);
+
+  throw error;
+}
