@@ -6,6 +6,7 @@ import {GlobalInputProps} from "./inputprops";
 const comps = {
   "default": dynamic(() => import("./TextField001"), {suspense: true}),
   "input001": dynamic(() => import("./TextField001"), {suspense: true}),
+  "input002": dynamic(() => import("./TextField002"), {suspense: true}),
 };
 
 const TextField = React.forwardRef<HTMLInputElement, GlobalInputProps>(

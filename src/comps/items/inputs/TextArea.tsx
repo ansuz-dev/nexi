@@ -6,6 +6,7 @@ import {GlobalTextAreaProps} from "./inputprops";
 const comps = {
   "default": dynamic(() => import("./TextArea001"), {suspense: true}),
   "input001": dynamic(() => import("./TextArea001"), {suspense: true}),
+  "input002": dynamic(() => import("./TextArea002"), {suspense: true}),
 };
 
 const TextArea = React.forwardRef<HTMLTextAreaElement, GlobalTextAreaProps>(

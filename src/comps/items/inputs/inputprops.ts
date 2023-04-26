@@ -4,9 +4,9 @@ export type InputColors = "primary" | "secondary";
 
 export type InputSizes = "large" | "medium" | "small";
 
-export type InputLayouts = "default" | "input001";
+export type InputLayouts = "default" | "input001" | "input002";
 
-export type TexAreaLayouts = "default" | "textarea001";
+export type TexAreaLayouts = "default" | "textarea001" | "textarea002";
 
 export type SelectLayouts = "default" | "select001";
 
