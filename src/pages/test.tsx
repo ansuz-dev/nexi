@@ -115,6 +115,72 @@ const TestPage = (): JSX.Element => (
       />
     </div>
 
+    <div className="container mx-auto space-x-2">
+      <Button
+        layout="btn002"
+        link
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<GhostImage
+          src="https://cms.hestiaecobat.fr/uploads/alarm_on_b22d73a308.svg"
+          className="relative w-6 h-6"
+          layout="fill"
+        />}
+      />
+      <Button
+        layout="btn002"
+        link
+        type="outline"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        layout="btn002"
+        link
+        type="text"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        layout="btn002"
+        link
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        layout="btn002"
+        link
+        type="outline"
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<PhoneIcon />}
+      />
+      <Button
+        layout="btn002"
+        link
+        type="text"
+        color="secondary"
+        href="/"
+        size="small"
+        label="Go back home"
+        icon={<GhostImage
+          src="https://cms.hestiaecobat.fr/uploads/alarm_on_b22d73a308.svg"
+          className="relative w-6 h-6"
+          layout="fill"
+        />}
+      />
+    </div>
+
     <div className="container mx-auto space-y-2">
       <TextArea
         layout="default"

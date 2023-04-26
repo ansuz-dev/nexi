@@ -5,6 +5,7 @@ import {GlobalButtonProps} from "./buttonprops";
 const comps = {
   "default": dynamic(() => import("./Button001"), {suspense: true}),
   "btn001": dynamic(() => import("./Button001"), {suspense: true}),
+  "btn002": dynamic(() => import("./Button002"), {suspense: true}),
 };
 
 const Button = ({layout, ...rest}: GlobalButtonProps) : JSX.Element => {

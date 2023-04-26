@@ -4,7 +4,7 @@ export type ButtonColors = "primary" | "secondary";
 
 export type ButtonSizes = "large" | "medium" | "small";
 
-export type ButtonLayouts = "default" | "btn001";
+export type ButtonLayouts = "default" | "btn001" | "btn002";
 
 export interface ButtonProps {
   label: string;
